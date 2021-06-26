@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		98CC9606C478564A02679871 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B8EF46D35C0BF062051E72 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework */; };
 		DA77CE4B2686FC170099DBC3 /* PortalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77CE492686FC170099DBC3 /* PortalVC.swift */; };
 		DA77CE4C2686FC170099DBC3 /* PortalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA77CE4A2686FC170099DBC3 /* PortalVC.xib */; };
+		DA77CE502686FE0E0099DBC3 /* GenreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77CE4F2686FE0E0099DBC3 /* GenreEntity.swift */; };
+		DA77CE532686FE790099DBC3 /* APIResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77CE522686FE790099DBC3 /* APIResponseEntity.swift */; };
+		DA77CE552686FECC0099DBC3 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77CE542686FECC0099DBC3 /* MovieEntity.swift */; };
+		DA77CE572686FFB20099DBC3 /* TVEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77CE562686FFB20099DBC3 /* TVEntity.swift */; };
 		DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2122686E9CB00606CA1 /* AppDelegate.swift */; };
 		DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21B2686E9D000606CA1 /* Assets.xcassets */; };
 		DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */; };
@@ -47,6 +51,10 @@
 		BBE0BEB37A9039174B425164 /* Pods-tmdb-netflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix.debug.xcconfig"; sourceTree = "<group>"; };
 		DA77CE492686FC170099DBC3 /* PortalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalVC.swift; sourceTree = "<group>"; };
 		DA77CE4A2686FC170099DBC3 /* PortalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortalVC.xib; sourceTree = "<group>"; };
+		DA77CE4F2686FE0E0099DBC3 /* GenreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreEntity.swift; sourceTree = "<group>"; };
+		DA77CE522686FE790099DBC3 /* APIResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseEntity.swift; sourceTree = "<group>"; };
+		DA77CE542686FECC0099DBC3 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		DA77CE562686FFB20099DBC3 /* TVEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVEntity.swift; sourceTree = "<group>"; };
 		DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-netflix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADBB2122686E9CB00606CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DADBB21B2686E9D000606CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +145,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DA77CE4D2686FD930099DBC3 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		DA77CE4E2686FDA20099DBC3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DA77CE4F2686FE0E0099DBC3 /* GenreEntity.swift */,
+				DA77CE522686FE790099DBC3 /* APIResponseEntity.swift */,
+				DA77CE542686FECC0099DBC3 /* MovieEntity.swift */,
+				DA77CE562686FFB20099DBC3 /* TVEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		DADBB2062686E9CB00606CA1 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +217,8 @@
 		DADBB2422686F53800606CA1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DA77CE4E2686FDA20099DBC3 /* Entity */,
+				DA77CE4D2686FD930099DBC3 /* Store */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -232,6 +260,7 @@
 				DADBB20B2686E9CB00606CA1 /* Sources */,
 				DADBB20C2686E9CB00606CA1 /* Frameworks */,
 				DADBB20D2686E9CB00606CA1 /* Resources */,
+				9FA1BE577B45355AAD632D1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +298,7 @@
 				DADBB22C2686E9D100606CA1 /* Sources */,
 				DADBB22D2686E9D100606CA1 /* Frameworks */,
 				DADBB22E2686E9D100606CA1 /* Resources */,
+				F27C4E395429A6DD330A3CD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +424,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9FA1BE577B45355AAD632D1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A1CC34F837611650CD7CDDC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +463,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F27C4E395429A6DD330A3CD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmdb-netflix-tmdb-netflixUITests/Pods-tmdb-netflix-tmdb-netflixUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmdb-netflix-tmdb-netflixUITests/Pods-tmdb-netflix-tmdb-netflixUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tmdb-netflix-tmdb-netflixUITests/Pods-tmdb-netflix-tmdb-netflixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -423,7 +487,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA77CE532686FE790099DBC3 /* APIResponseEntity.swift in Sources */,
+				DA77CE552686FECC0099DBC3 /* MovieEntity.swift in Sources */,
+				DA77CE572686FFB20099DBC3 /* TVEntity.swift in Sources */,
 				DA77CE4B2686FC170099DBC3 /* PortalVC.swift in Sources */,
+				DA77CE502686FE0E0099DBC3 /* GenreEntity.swift in Sources */,
 				DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

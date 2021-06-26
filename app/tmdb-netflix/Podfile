@@ -6,6 +6,7 @@ target 'tmdb-netflix' do
   use_frameworks!
 
   # Pods for tmdb-netflix
+  pod 'Moya'
 
   target 'tmdb-netflixTests' do
     inherit! :search_paths
