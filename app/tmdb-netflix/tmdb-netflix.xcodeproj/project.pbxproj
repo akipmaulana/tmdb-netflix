@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		402DA79D17B4997E1150CC50 /* Pods_tmdb_netflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2A086C72276B2EFF3DDE39 /* Pods_tmdb_netflix.framework */; };
+		98CC9606C478564A02679871 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B8EF46D35C0BF062051E72 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework */; };
+		DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2122686E9CB00606CA1 /* AppDelegate.swift */; };
+		DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21B2686E9D000606CA1 /* Assets.xcassets */; };
+		DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */; };
+		DADBB22A2686E9D100606CA1 /* tmdb_netflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2292686E9D100606CA1 /* tmdb_netflixTests.swift */; };
+		DADBB2352686E9D100606CA1 /* tmdb_netflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2342686E9D100606CA1 /* tmdb_netflixUITests.swift */; };
+		FEF9321A4A2347D7ED25A4D3 /* Pods_tmdb_netflixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2FF54505EA001A2F4282B1 /* Pods_tmdb_netflixTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DADBB2262686E9D100606CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADBB2072686E9CB00606CA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADBB20E2686E9CB00606CA1;
+			remoteInfo = "tmdb-netflix";
+		};
+		DADBB2312686E9D100606CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DADBB2072686E9CB00606CA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DADBB20E2686E9CB00606CA1;
+			remoteInfo = "tmdb-netflix";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B8EF46D35C0BF062051E72 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdb_netflix_tmdb_netflixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01541BB3658223B4E12B2709 /* Pods-tmdb-netflix-tmdb-netflixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix-tmdb-netflixUITests.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix-tmdb-netflixUITests/Pods-tmdb-netflix-tmdb-netflixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		03BDFF2DCD70E9C6C06FAACD /* Pods-tmdb-netflix-tmdb-netflixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix-tmdb-netflixUITests.release.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix-tmdb-netflixUITests/Pods-tmdb-netflix-tmdb-netflixUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3A2FF54505EA001A2F4282B1 /* Pods_tmdb_netflixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdb_netflixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61D87CE147B92850DD2FF3BF /* Pods-tmdb-netflixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflixTests.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-netflixTests/Pods-tmdb-netflixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D03A4D219C21B719379A7A9 /* Pods-tmdb-netflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix.release.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix.release.xcconfig"; sourceTree = "<group>"; };
+		8C2A086C72276B2EFF3DDE39 /* Pods_tmdb_netflix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdb_netflix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE0BEB37A9039174B425164 /* Pods-tmdb-netflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix.debug.xcconfig"; sourceTree = "<group>"; };
+		DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-netflix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADBB2122686E9CB00606CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DADBB21B2686E9D000606CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DADBB21E2686E9D000606CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DADBB2202686E9D000606CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADBB2252686E9D100606CA1 /* tmdb-netflixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tmdb-netflixTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADBB2292686E9D100606CA1 /* tmdb_netflixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmdb_netflixTests.swift; sourceTree = "<group>"; };
+		DADBB22B2686E9D100606CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADBB2302686E9D100606CA1 /* tmdb-netflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tmdb-netflixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADBB2342686E9D100606CA1 /* tmdb_netflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmdb_netflixUITests.swift; sourceTree = "<group>"; };
+		DADBB2362686E9D100606CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9CC50A373F63A339C04232A /* Pods-tmdb-netflixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflixTests.release.xcconfig"; path = "Target Support Files/Pods-tmdb-netflixTests/Pods-tmdb-netflixTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DADBB20C2686E9CB00606CA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				402DA79D17B4997E1150CC50 /* Pods_tmdb_netflix.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADBB2222686E9D100606CA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF9321A4A2347D7ED25A4D3 /* Pods_tmdb_netflixTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADBB22D2686E9D100606CA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98CC9606C478564A02679871 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5654A5B5E6BD3178851CAE2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C2A086C72276B2EFF3DDE39 /* Pods_tmdb_netflix.framework */,
+				00B8EF46D35C0BF062051E72 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework */,
+				3A2FF54505EA001A2F4282B1 /* Pods_tmdb_netflixTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D14D37EFB91CA6E3E379CBA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBE0BEB37A9039174B425164 /* Pods-tmdb-netflix.debug.xcconfig */,
+				7D03A4D219C21B719379A7A9 /* Pods-tmdb-netflix.release.xcconfig */,
+				01541BB3658223B4E12B2709 /* Pods-tmdb-netflix-tmdb-netflixUITests.debug.xcconfig */,
+				03BDFF2DCD70E9C6C06FAACD /* Pods-tmdb-netflix-tmdb-netflixUITests.release.xcconfig */,
+				61D87CE147B92850DD2FF3BF /* Pods-tmdb-netflixTests.debug.xcconfig */,
+				E9CC50A373F63A339C04232A /* Pods-tmdb-netflixTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DADBB2062686E9CB00606CA1 = {
+			isa = PBXGroup;
+			children = (
+				DADBB2112686E9CB00606CA1 /* tmdb-netflix */,
+				DADBB2282686E9D100606CA1 /* tmdb-netflixTests */,
+				DADBB2332686E9D100606CA1 /* tmdb-netflixUITests */,
+				DADBB2102686E9CB00606CA1 /* Products */,
+				D14D37EFB91CA6E3E379CBA4 /* Pods */,
+				5654A5B5E6BD3178851CAE2F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DADBB2102686E9CB00606CA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */,
+				DADBB2252686E9D100606CA1 /* tmdb-netflixTests.xctest */,
+				DADBB2302686E9D100606CA1 /* tmdb-netflixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DADBB2112686E9CB00606CA1 /* tmdb-netflix */ = {
+			isa = PBXGroup;
+			children = (
+				DADBB2452686F5AC00606CA1 /* App */,
+				DADBB2442686F57B00606CA1 /* Shared */,
+				DADBB2432686F56400606CA1 /* Feature */,
+				DADBB2422686F53800606CA1 /* Domain */,
+			);
+			path = "tmdb-netflix";
+			sourceTree = "<group>";
+		};
+		DADBB2282686E9D100606CA1 /* tmdb-netflixTests */ = {
+			isa = PBXGroup;
+			children = (
+				DADBB2292686E9D100606CA1 /* tmdb_netflixTests.swift */,
+				DADBB22B2686E9D100606CA1 /* Info.plist */,
+			);
+			path = "tmdb-netflixTests";
+			sourceTree = "<group>";
+		};
+		DADBB2332686E9D100606CA1 /* tmdb-netflixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DADBB2342686E9D100606CA1 /* tmdb_netflixUITests.swift */,
+				DADBB2362686E9D100606CA1 /* Info.plist */,
+			);
+			path = "tmdb-netflixUITests";
+			sourceTree = "<group>";
+		};
+		DADBB2422686F53800606CA1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DADBB2432686F56400606CA1 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		DADBB2442686F57B00606CA1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DADBB2452686F5AC00606CA1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DADBB21B2686E9D000606CA1 /* Assets.xcassets */,
+				DADBB2202686E9D000606CA1 /* Info.plist */,
+				DADBB2122686E9CB00606CA1 /* AppDelegate.swift */,
+				DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DADBB20E2686E9CB00606CA1 /* tmdb-netflix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADBB2392686E9D100606CA1 /* Build configuration list for PBXNativeTarget "tmdb-netflix" */;
+			buildPhases = (
+				2F526B4E4E365FE219605FB6 /* [CP] Check Pods Manifest.lock */,
+				DADBB20B2686E9CB00606CA1 /* Sources */,
+				DADBB20C2686E9CB00606CA1 /* Frameworks */,
+				DADBB20D2686E9CB00606CA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tmdb-netflix";
+			productName = "tmdb-netflix";
+			productReference = DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DADBB2242686E9D100606CA1 /* tmdb-netflixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADBB23C2686E9D100606CA1 /* Build configuration list for PBXNativeTarget "tmdb-netflixTests" */;
+			buildPhases = (
+				703A20A1D771542EC1E3E289 /* [CP] Check Pods Manifest.lock */,
+				DADBB2212686E9D100606CA1 /* Sources */,
+				DADBB2222686E9D100606CA1 /* Frameworks */,
+				DADBB2232686E9D100606CA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADBB2272686E9D100606CA1 /* PBXTargetDependency */,
+			);
+			name = "tmdb-netflixTests";
+			productName = "tmdb-netflixTests";
+			productReference = DADBB2252686E9D100606CA1 /* tmdb-netflixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DADBB22F2686E9D100606CA1 /* tmdb-netflixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DADBB23F2686E9D100606CA1 /* Build configuration list for PBXNativeTarget "tmdb-netflixUITests" */;
+			buildPhases = (
+				A1CC34F837611650CD7CDDC2 /* [CP] Check Pods Manifest.lock */,
+				DADBB22C2686E9D100606CA1 /* Sources */,
+				DADBB22D2686E9D100606CA1 /* Frameworks */,
+				DADBB22E2686E9D100606CA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DADBB2322686E9D100606CA1 /* PBXTargetDependency */,
+			);
+			name = "tmdb-netflixUITests";
+			productName = "tmdb-netflixUITests";
+			productReference = DADBB2302686E9D100606CA1 /* tmdb-netflixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DADBB2072686E9CB00606CA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					DADBB20E2686E9CB00606CA1 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DADBB2242686E9D100606CA1 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = DADBB20E2686E9CB00606CA1;
+					};
+					DADBB22F2686E9D100606CA1 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = DADBB20E2686E9CB00606CA1;
+					};
+				};
+			};
+			buildConfigurationList = DADBB20A2686E9CB00606CA1 /* Build configuration list for PBXProject "tmdb-netflix" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DADBB2062686E9CB00606CA1;
+			productRefGroup = DADBB2102686E9CB00606CA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DADBB20E2686E9CB00606CA1 /* tmdb-netflix */,
+				DADBB2242686E9D100606CA1 /* tmdb-netflixTests */,
+				DADBB22F2686E9D100606CA1 /* tmdb-netflixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DADBB20D2686E9CB00606CA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */,
+				DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADBB2232686E9D100606CA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADBB22E2686E9D100606CA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F526B4E4E365FE219605FB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tmdb-netflix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		703A20A1D771542EC1E3E289 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tmdb-netflixTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1CC34F837611650CD7CDDC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tmdb-netflix-tmdb-netflixUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DADBB20B2686E9CB00606CA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADBB2212686E9D100606CA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADBB22A2686E9D100606CA1 /* tmdb_netflixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DADBB22C2686E9D100606CA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DADBB2352686E9D100606CA1 /* tmdb_netflixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DADBB2272686E9D100606CA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADBB20E2686E9CB00606CA1 /* tmdb-netflix */;
+			targetProxy = DADBB2262686E9D100606CA1 /* PBXContainerItemProxy */;
+		};
+		DADBB2322686E9D100606CA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DADBB20E2686E9CB00606CA1 /* tmdb-netflix */;
+			targetProxy = DADBB2312686E9D100606CA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DADBB21E2686E9D000606CA1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DADBB2372686E9D100606CA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DADBB2382686E9D100606CA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DADBB23A2686E9D100606CA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBE0BEB37A9039174B425164 /* Pods-tmdb-netflix.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVZVUY66BX;
+				INFOPLIST_FILE = "$(SRCROOT)/tmdb-netflix/App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "am.lab.tmdb-netflix";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DADBB23B2686E9D100606CA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D03A4D219C21B719379A7A9 /* Pods-tmdb-netflix.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVZVUY66BX;
+				INFOPLIST_FILE = "$(SRCROOT)/tmdb-netflix/App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "am.lab.tmdb-netflix";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DADBB23D2686E9D100606CA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61D87CE147B92850DD2FF3BF /* Pods-tmdb-netflixTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVZVUY66BX;
+				INFOPLIST_FILE = "tmdb-netflixTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "am.lab.tmdb-netflixTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tmdb-netflix.app/tmdb-netflix";
+			};
+			name = Debug;
+		};
+		DADBB23E2686E9D100606CA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9CC50A373F63A339C04232A /* Pods-tmdb-netflixTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVZVUY66BX;
+				INFOPLIST_FILE = "tmdb-netflixTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "am.lab.tmdb-netflixTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tmdb-netflix.app/tmdb-netflix";
+			};
+			name = Release;
+		};
+		DADBB2402686E9D100606CA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01541BB3658223B4E12B2709 /* Pods-tmdb-netflix-tmdb-netflixUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVZVUY66BX;
+				INFOPLIST_FILE = "tmdb-netflixUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "am.lab.tmdb-netflixUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tmdb-netflix";
+			};
+			name = Debug;
+		};
+		DADBB2412686E9D100606CA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03BDFF2DCD70E9C6C06FAACD /* Pods-tmdb-netflix-tmdb-netflixUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVZVUY66BX;
+				INFOPLIST_FILE = "tmdb-netflixUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "am.lab.tmdb-netflixUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tmdb-netflix";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DADBB20A2686E9CB00606CA1 /* Build configuration list for PBXProject "tmdb-netflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADBB2372686E9D100606CA1 /* Debug */,
+				DADBB2382686E9D100606CA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADBB2392686E9D100606CA1 /* Build configuration list for PBXNativeTarget "tmdb-netflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADBB23A2686E9D100606CA1 /* Debug */,
+				DADBB23B2686E9D100606CA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADBB23C2686E9D100606CA1 /* Build configuration list for PBXNativeTarget "tmdb-netflixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADBB23D2686E9D100606CA1 /* Debug */,
+				DADBB23E2686E9D100606CA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DADBB23F2686E9D100606CA1 /* Build configuration list for PBXNativeTarget "tmdb-netflixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADBB2402686E9D100606CA1 /* Debug */,
+				DADBB2412686E9D100606CA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DADBB2072686E9CB00606CA1 /* Project object */;
+}
