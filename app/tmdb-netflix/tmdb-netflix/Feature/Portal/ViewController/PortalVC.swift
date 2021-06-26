@@ -12,8 +12,18 @@ class PortalVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        requestDiscoverMovie()
     }
 
+    func requestDiscoverMovie() {
+        ApiManager.shared.discoverService.request(target: .movie(parameter: [:]), mapper: ResponsePageable<Movie>.self) { pageable in
+            print(pageable)
+        } error: { error in
+            print(error)
+        }
+    }
+    
+    func requestDiscoverTv() {
+        
+    }
 }

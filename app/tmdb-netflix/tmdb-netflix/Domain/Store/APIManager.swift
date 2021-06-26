@@ -11,6 +11,7 @@ import Moya
 import Alamofire
 
 protocol ApiService {
+    func stitchApiKey(from parameters: Parameters) -> Parameters
     func createEndpoint(_ endpoint: String) -> String
     var version: ApiVersion { get }
     var baseUrlByVersion: String { get }
@@ -24,6 +25,12 @@ extension ApiService {
     var baseUrlByVersion: String {
         return String.init(format: "%@/%@", APIConstant.baseUrl, version.rawValue)
     }
+    
+    func stitchApiKey(from parameters: Parameters) -> Parameters {
+        var newParams: Parameters = parameters
+        newParams["api_key"] = APIConstant.apikey
+        return newParams
+    }
 }
 
 class ApiManager {
@@ -33,6 +40,7 @@ class ApiManager {
     
     static let shared = ApiManager()
     
+    let discoverService = InnerApiManager<DiscoverService>()
 }
 
 class InnerApiManager<T: TargetType> {
