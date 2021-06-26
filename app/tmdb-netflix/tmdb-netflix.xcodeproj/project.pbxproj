@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		402DA79D17B4997E1150CC50 /* Pods_tmdb_netflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2A086C72276B2EFF3DDE39 /* Pods_tmdb_netflix.framework */; };
 		98CC9606C478564A02679871 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B8EF46D35C0BF062051E72 /* Pods_tmdb_netflix_tmdb_netflixUITests.framework */; };
+		DA77CE4B2686FC170099DBC3 /* PortalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA77CE492686FC170099DBC3 /* PortalVC.swift */; };
+		DA77CE4C2686FC170099DBC3 /* PortalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA77CE4A2686FC170099DBC3 /* PortalVC.xib */; };
 		DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2122686E9CB00606CA1 /* AppDelegate.swift */; };
 		DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21B2686E9D000606CA1 /* Assets.xcassets */; };
 		DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */; };
@@ -43,6 +45,8 @@
 		7D03A4D219C21B719379A7A9 /* Pods-tmdb-netflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix.release.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix.release.xcconfig"; sourceTree = "<group>"; };
 		8C2A086C72276B2EFF3DDE39 /* Pods_tmdb_netflix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdb_netflix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE0BEB37A9039174B425164 /* Pods-tmdb-netflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-netflix.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-netflix/Pods-tmdb-netflix.debug.xcconfig"; sourceTree = "<group>"; };
+		DA77CE492686FC170099DBC3 /* PortalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalVC.swift; sourceTree = "<group>"; };
+		DA77CE4A2686FC170099DBC3 /* PortalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortalVC.xib; sourceTree = "<group>"; };
 		DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-netflix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADBB2122686E9CB00606CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DADBB21B2686E9D000606CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +112,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA77CE442686FB8C0099DBC3 /* Portal */ = {
+			isa = PBXGroup;
+			children = (
+				DA77CE462686FBA60099DBC3 /* ViewModel */,
+				DA77CE452686FB930099DBC3 /* ViewController */,
+			);
+			path = Portal;
+			sourceTree = "<group>";
+		};
+		DA77CE452686FB930099DBC3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA77CE492686FC170099DBC3 /* PortalVC.swift */,
+				DA77CE4A2686FC170099DBC3 /* PortalVC.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA77CE462686FBA60099DBC3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DADBB2062686E9CB00606CA1 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +198,7 @@
 		DADBB2432686F56400606CA1 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				DA77CE442686FB8C0099DBC3 /* Portal */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -298,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */,
+				DA77CE4C2686FC170099DBC3 /* PortalVC.xib in Resources */,
 				DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA77CE4B2686FC170099DBC3 /* PortalVC.swift in Sources */,
 				DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

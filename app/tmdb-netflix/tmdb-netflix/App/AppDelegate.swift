@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private Setup
     private func configureWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = PortalVC()
         window?.makeKeyAndVisible()
     }
 }
