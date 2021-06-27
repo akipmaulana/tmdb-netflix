@@ -10,6 +10,11 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .black
+    }
+    
     @objc func presentLandingPage(vc: UIViewController, completion: (() -> Void)? = nil) {
         vc.modalPresentationStyle = .fullScreen
         guard let topViewController = UIApplication.topViewController() else {

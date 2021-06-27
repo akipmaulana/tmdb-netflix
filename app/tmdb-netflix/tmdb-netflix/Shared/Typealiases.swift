@@ -10,3 +10,4 @@ import Foundation
 
 typealias ApiSuccessClosure<BR: Codable> = (_ response: BR) -> Void
 typealias ErrorClosure = (Error) -> Void
+typealias LoadableReusableView = NibLoadableView & ReusableView

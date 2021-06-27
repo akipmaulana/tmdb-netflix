@@ -26,10 +26,10 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SourceSansPro-Bold</string>
-		<string>SourceSansPro-SemiBold</string>
-		<string>SourceSansPro-Regular</string>
-		<string>SourceSansPro-Light</string>
+		<string>SourceSansPro-Bold.ttf</string>
+		<string>SourceSansPro-SemiBold.ttf</string>
+		<string>SourceSansPro-Regular.ttf</string>
+		<string>SourceSansPro-Light.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -29,6 +29,9 @@
 		DA8044432688428100AC8A3E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8044422688428100AC8A3E /* BaseNavigationController.swift */; };
 		DA8044452688429E00AC8A3E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8044442688429E00AC8A3E /* BaseViewController.swift */; };
 		DA804447268844AE00AC8A3E /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA804446268844AE00AC8A3E /* AppExtension.swift */; };
+		DA80444A2688514100AC8A3E /* ScrollExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8044492688514100AC8A3E /* ScrollExtension.swift */; };
+		DA8044502688523800AC8A3E /* MThematicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80444E2688523800AC8A3E /* MThematicTableCell.swift */; };
+		DA8044512688523800AC8A3E /* MThematicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA80444F2688523800AC8A3E /* MThematicTableCell.xib */; };
 		DA9A702A268801F0007CA0A6 /* GenreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A7029268801F0007CA0A6 /* GenreService.swift */; };
 		DA9A702C26880200007CA0A6 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A702B26880200007CA0A6 /* MovieService.swift */; };
 		DA9A702E2688020D007CA0A6 /* TVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A702D2688020D007CA0A6 /* TVService.swift */; };
@@ -92,6 +95,9 @@
 		DA8044422688428100AC8A3E /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		DA8044442688429E00AC8A3E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DA804446268844AE00AC8A3E /* AppExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
+		DA8044492688514100AC8A3E /* ScrollExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollExtension.swift; sourceTree = "<group>"; };
+		DA80444E2688523800AC8A3E /* MThematicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MThematicTableCell.swift; sourceTree = "<group>"; };
+		DA80444F2688523800AC8A3E /* MThematicTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MThematicTableCell.xib; sourceTree = "<group>"; };
 		DA9A7029268801F0007CA0A6 /* GenreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreService.swift; sourceTree = "<group>"; };
 		DA9A702B26880200007CA0A6 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		DA9A702D2688020D007CA0A6 /* TVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVService.swift; sourceTree = "<group>"; };
@@ -233,6 +239,31 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		DA80444B268851EB00AC8A3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA80444D268851FF00AC8A3E /* CollectionCell */,
+				DA80444C268851F200AC8A3E /* TableCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA80444C268851F200AC8A3E /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				DA80444E2688523800AC8A3E /* MThematicTableCell.swift */,
+				DA80444F2688523800AC8A3E /* MThematicTableCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		DA80444D268851FF00AC8A3E /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
 		DA9A702F268805A6007CA0A6 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +285,7 @@
 		DA9A70332688063A007CA0A6 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				DA80444B268851EB00AC8A3E /* View */,
 				DA9A703426880640007CA0A6 /* ViewController */,
 			);
 			path = Movie;
@@ -291,6 +323,7 @@
 				DA9A704026880711007CA0A6 /* ColorExtension.swift */,
 				DA80443726883E0D00AC8A3E /* FontExtension.swift */,
 				DA804446268844AE00AC8A3E /* AppExtension.swift */,
+				DA8044492688514100AC8A3E /* ScrollExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -501,6 +534,7 @@
 				DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */,
 				DA77CE4C2686FC170099DBC3 /* PortalVC.xib in Resources */,
 				DA9A703E2688068D007CA0A6 /* TVHubVC.xib in Resources */,
+				DA8044512688523800AC8A3E /* MThematicTableCell.xib in Resources */,
 				DA8044412688400600AC8A3E /* SourceSansPro-Light.ttf in Resources */,
 				DA8044402688400600AC8A3E /* SourceSansPro-Regular.ttf in Resources */,
 				DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */,
@@ -654,7 +688,9 @@
 				DA77CE59268701D20099DBC3 /* APIManager.swift in Sources */,
 				DA77CE5D268702BA0099DBC3 /* Constants.swift in Sources */,
 				DA9A703726880663007CA0A6 /* MovieHubVC.swift in Sources */,
+				DA80444A2688514100AC8A3E /* ScrollExtension.swift in Sources */,
 				DA9A7032268805D3007CA0A6 /* TabBarVC.swift in Sources */,
+				DA8044502688523800AC8A3E /* MThematicTableCell.swift in Sources */,
 				DA77CE622687070F0099DBC3 /* GeneralUtil.swift in Sources */,
 				DA9A704126880711007CA0A6 /* ColorExtension.swift in Sources */,
 			);

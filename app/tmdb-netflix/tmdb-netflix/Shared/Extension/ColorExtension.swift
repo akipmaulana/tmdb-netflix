@@ -35,4 +35,16 @@ extension UIColor {
     @nonobjc class var blueyGrey: UIColor {
         return UIColor(hexString: "#afb0c8")
     }
+    
+    @nonobjc class var freeSpeechRed: UIColor {
+        return UIColor(hexString: "#db0000")
+    }
+    
+    @nonobjc class var matterhorn: UIColor {
+        return UIColor(hexString: "#564d4d")
+    }
+    
+    @nonobjc class var darkRed: UIColor {
+        return UIColor(hexString: "#831010")
+    }
 }

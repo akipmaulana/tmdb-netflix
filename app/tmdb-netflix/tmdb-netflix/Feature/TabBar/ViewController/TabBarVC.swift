@@ -58,12 +58,12 @@ final class TabBarVC: UITabBarController {
     }
     
     private func prepareUI() {
-        view.backgroundColor = .white
-        tabBar.tintColor = .whiteSmoke
+        view.backgroundColor = .black
+        tabBar.tintColor = .white
         if #available(iOS 10.0, *) {
-            tabBar.unselectedItemTintColor = UIColor.blueyGrey
+            tabBar.unselectedItemTintColor = UIColor.whiteSmoke.withAlphaComponent(0.8)
         }
-        tabBar.barTintColor = UIColor.white
+        tabBar.barTintColor = UIColor.black
         tabBar.isTranslucent = true
     }
     
