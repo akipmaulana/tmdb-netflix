@@ -30,9 +30,13 @@ class DetailContentVC: BaseViewController, ViewModelProtocol {
     @IBOutlet weak private var contentDurationLabel: UILabel!
     @IBOutlet weak private var contentOverviewLabel: UILabel!
     @IBOutlet weak private var sectionTitleReviewLabel: UILabel!
-    @IBOutlet weak private var sectionTitlePictureLabel: UILabel!
     @IBOutlet weak private var sectionReviewView: UIView!
-    @IBOutlet weak private var sectionPictureView: UICollectionView!
+    @IBOutlet weak private var seeMoreButton: UIButton!
+    @IBOutlet weak private var ratingTitleLabel: UILabel!
+    @IBOutlet weak private var ratingValueLabel: UILabel!
+    @IBOutlet weak private var voteTitleLabel: UILabel!
+    @IBOutlet weak private var voteValueLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,8 @@ class DetailContentVC: BaseViewController, ViewModelProtocol {
         //setupTitleVC()
         setupHeaderView()
         setupBasicInformationView()
+        setupReviewRating()
+        setupButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +70,8 @@ class DetailContentVC: BaseViewController, ViewModelProtocol {
         contentReleasedLabel?.text = viewModel?.contentReleasedLabelText
         contentDurationLabel?.text = viewModel?.contentAdultLabelText
         contentOverviewLabel?.text = viewModel?.contentOverviewLabelText
+        ratingValueLabel?.text = viewModel?.contentRatingLabelText
+        voteValueLabel?.text = viewModel?.contentVotingLabelText
     }
 }
 
@@ -104,34 +112,75 @@ private extension DetailContentVC {
     func setupBasicInformationView() {
         domainLabel?.font = .sourceSansProSemiBold(size: .caption)
         domainLabel?.textColor = .matterhorn
-        domainLabel?.text = "M O V I E"
+        domainLabel?.text = ""
         domainLabel?.numberOfLines = 0
         
         contentTitleLabel?.font = .sourceSansProBold(size: .h5)
         contentTitleLabel?.textColor = .white
-        contentTitleLabel?.text = "Wish Dradon"
+        contentTitleLabel?.text = ""
         contentTitleLabel?.numberOfLines = 0
         
         contentStatusLabel?.font = .sourceSansProSemiBold(size: .caption)
         contentStatusLabel?.textColor = .googleGreen
-        contentStatusLabel?.text = "Released"
+        contentStatusLabel?.text = ""
         contentStatusLabel?.numberOfLines = 0
         
         contentReleasedLabel?.font = .sourceSansProRegular(size: .caption)
         contentReleasedLabel?.textColor = .whiteSmoke
-        contentReleasedLabel?.text = "27 December 2022"
+        contentReleasedLabel?.text = ""
         contentReleasedLabel?.numberOfLines = 0
         contentReleasedLabel?.textAlignment = .center
         
         contentDurationLabel?.font = .sourceSansProRegular(size: .caption)
         contentDurationLabel?.textColor = .whiteSmoke
-        contentDurationLabel?.text = "Adult"
+        contentDurationLabel?.text = ""
         contentDurationLabel?.numberOfLines = 0
         contentDurationLabel?.textAlignment = .right
         
         contentOverviewLabel?.font = .sourceSansProRegular(size: .body)
         contentOverviewLabel?.textColor = UIColor.white
-        contentOverviewLabel?.text = "When the aging Meyer Lansky is investigated one last time by the Feds who suspect he has stashed away millions of dollars over half a century, the retired gangster spins a dizzying tale, revealing the untold truth about his life as the notorious boss of Murder Inc. and the National Crime Syndicate."
+        contentOverviewLabel?.text = ""
         contentOverviewLabel?.numberOfLines = 0
+        
+        sectionTitleReviewLabel?.font = .sourceSansProSemiBold(size: .h6)
+        sectionTitleReviewLabel?.textColor = UIColor.white
+        sectionTitleReviewLabel?.text = "Reviews & Rating"
+        sectionTitleReviewLabel?.numberOfLines = 0
+    }
+    
+    func setupReviewRating() {
+        sectionReviewView?.backgroundColor = .clear
+        
+        ratingValueLabel?.font = .sourceSansProSemiBold(size: .h4)
+        ratingValueLabel?.textColor = UIColor.white
+        ratingValueLabel?.text = ""
+        ratingValueLabel?.numberOfLines = 0
+        
+        ratingTitleLabel?.font = .sourceSansProRegular(size: .title)
+        ratingTitleLabel?.textColor = UIColor.white
+        ratingTitleLabel?.text = "Out of 10"
+        ratingTitleLabel?.numberOfLines = 0
+        
+        voteValueLabel?.font = .sourceSansProSemiBold(size: .h4)
+        voteValueLabel?.textColor = UIColor.white
+        voteValueLabel?.text = ""
+        voteValueLabel?.numberOfLines = 0
+        
+        voteTitleLabel?.font = .sourceSansProRegular(size: .title)
+        voteTitleLabel?.textColor = UIColor.white
+        voteTitleLabel?.text = "Vote Count"
+        voteTitleLabel?.numberOfLines = 0
+    }
+    
+    func setupButtons() {
+        seeMoreButton?.titleLabel?.font = .sourceSansProSemiBold(size: .subtitle2)
+        seeMoreButton?.setTitleColor(.link, for: .normal)
+        seeMoreButton?.setTitle("See More", for: .normal)
+        seeMoreButton?.addTarget(self, action: #selector(didTapSeeMore(_:)), for: .touchUpInside)
+    }
+    
+    @objc func didTapSeeMore(_ button: UIButton) {
+        let reviewVC = ReviewContentVC()
+        navigationController?.pushViewController(reviewVC, animated: true)
     }
 }

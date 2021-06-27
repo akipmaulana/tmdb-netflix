@@ -18,6 +18,8 @@ protocol DetailContentViewModel: TMDBViewModel {
     var contentReleasedLabelText: String? { get }
     var contentAdultLabelText: String? { get }
     var contentOverviewLabelText: String? { get }
+    var contentRatingLabelText: String? { get }
+    var contentVotingLabelText: String? { get }
     
 }
 
@@ -55,6 +57,14 @@ final class DetailContentDefaultViewModel: DetailContentViewModel {
     
     var contentOverviewLabelText: String? {
         return content?.overview
+    }
+    
+    var contentRatingLabelText: String? {
+        return "\(content?.voteAverage ?? 0)"
+    }
+    
+    var contentVotingLabelText: String? {
+        return "\(content?.voteCount ?? 0)"
     }
     
     init(content: Content?) {
