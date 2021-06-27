@@ -420,6 +420,7 @@
 		DAA307E026888F6600C65FE9 /* Review */ = {
 			isa = PBXGroup;
 			children = (
+				DAA307EA2688C8E100C65FE9 /* View */,
 				DAA307E626888F9300C65FE9 /* ViewModel */,
 				DAA307E126888F6C00C65FE9 /* ViewController */,
 			);
@@ -524,7 +525,6 @@
 		DADBB2432686F56400606CA1 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				DAA307EA2688C8E100C65FE9 /* View */,
 				DAA307E026888F6600C65FE9 /* Review */,
 				DAA307D726888F1100C65FE9 /* Detail */,
 				DA80445C26886AA400AC8A3E /* Base */,
