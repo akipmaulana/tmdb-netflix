@@ -30,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7o-AS-g7g">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1616"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1316"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-91-vCG">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
@@ -72,10 +72,10 @@
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5lN-xh-KxN">
-                                    <rect key="frame" x="0.0" y="616" width="414" height="1000"/>
+                                    <rect key="frame" x="0.0" y="616" width="414" height="700"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="1000" id="w9a-nZ-tKS"/>
+                                        <constraint firstAttribute="height" constant="700" id="w9a-nZ-tKS"/>
                                     </constraints>
                                 </tableView>
                             </subviews>

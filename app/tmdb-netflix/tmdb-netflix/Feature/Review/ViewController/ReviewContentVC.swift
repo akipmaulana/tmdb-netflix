@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
 class ReviewContentVC: BaseViewController, ViewModelProtocol {
 
@@ -44,6 +45,14 @@ class ReviewContentVC: BaseViewController, ViewModelProtocol {
         viewModel?.reviews.drive(onNext: {[unowned self] (_) in
             self.tableView?.reloadData()
         }).disposed(by: disposeBag)
+        
+        viewModel?.isFetching.drive(onNext: { loading in
+            if loading {
+                SVProgressHUD.show()
+            } else {
+                SVProgressHUD.dismiss()
+            }
+        }).disposed(by: disposeBag)
     }
 
     func renderView() {
@@ -62,6 +71,15 @@ extension ReviewContentVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ReviewBoxTableCell
         cell.bindView(vm: ReviewBoxDefaultViewModel(review: viewModel?.getSafeReview(at: indexPath.row)))
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            viewModel?.loadMore()
+        }
     }
 }
 
