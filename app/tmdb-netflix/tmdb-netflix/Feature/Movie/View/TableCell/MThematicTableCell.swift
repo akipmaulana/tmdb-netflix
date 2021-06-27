@@ -17,8 +17,21 @@ class MThematicTableCell: UITableViewCell, LoadableReusableView {
         super.awakeFromNib()
         setupFoundationView()
         setupLabels()
+        setupCollectionView()
     }
     
+}
+
+extension MThematicTableCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PosterCollectionCell
+        return cell
+    }
 }
 
 private extension MThematicTableCell {
@@ -32,5 +45,19 @@ private extension MThematicTableCell {
         titleLabel?.textColor = .whiteSmoke
         titleLabel?.numberOfLines = 0
         titleLabel?.text = "Trending Now"
+    }
+    
+    private func setupCollectionView() {
+        let height: CGFloat = 128
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: height * 0.69, height: height)
+        flowLayout.minimumInteritemSpacing = 8
+        flowLayout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = flowLayout
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(PosterCollectionCell.self)
     }
 }
