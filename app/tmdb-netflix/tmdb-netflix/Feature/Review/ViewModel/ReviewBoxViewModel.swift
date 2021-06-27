@@ -26,7 +26,7 @@ final class ReviewBoxDefaultViewModel: ReviewBoxViewModel {
     }
     
     var avatarUrl: String? {
-        String.init(format: "%@%@", APIConstant.baseImageUrl, review?.authorDetail?.avatarPath ?? "")
+        return review?.authorDetail?.avatarPath
     }
     
     var nameLabelText: String? {

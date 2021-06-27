@@ -15,7 +15,7 @@ struct AuthorReview: Codable {
     let rating: Double?
 }
 
-struct Review {
+struct Review: Codable {
     let author: String?
     let authorDetail: AuthorReview?
     let content: String?

@@ -394,7 +394,6 @@
 		DAA307D726888F1100C65FE9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				DAA307EA2688C8E100C65FE9 /* View */,
 				DAA307D926888F2500C65FE9 /* ViewModel */,
 				DAA307D826888F1B00C65FE9 /* ViewController */,
 			);
@@ -414,7 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				DAA307DE26888F5500C65FE9 /* DetailContentViewModel.swift */,
-				DAA307F02688C91600C65FE9 /* ReviewBoxViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -440,6 +438,7 @@
 		DAA307E626888F9300C65FE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DAA307F02688C91600C65FE9 /* ReviewBoxViewModel.swift */,
 				DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */,
 			);
 			path = ViewModel;
@@ -525,6 +524,7 @@
 		DADBB2432686F56400606CA1 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				DAA307EA2688C8E100C65FE9 /* View */,
 				DAA307E026888F6600C65FE9 /* Review */,
 				DAA307D726888F1100C65FE9 /* Detail */,
 				DA80445C26886AA400AC8A3E /* Base */,

@@ -16,6 +16,7 @@ enum TVService: ApiService {
     case onTheAir
     case topRated
     case popular
+    case review(id: Int, parameters: Parameters)
     
     func createEndpoint(_ endpoint: String) -> String {
         return "/tv\(endpoint)"
@@ -40,6 +41,8 @@ extension TVService: TargetType {
             return createEndpoint("/top_rated")
         case .onTheAir:
             return createEndpoint("/on_the_air")
+        case .review(let id, _):
+            return createEndpoint("/\(id)/reviews")
         }
     }
     
@@ -55,6 +58,8 @@ extension TVService: TargetType {
         switch self {
         case .latest, .onTheAir, .airingToday, .popular, .topRated:
             return .requestParameters(parameters: stitchApiKey(from: [:]), encoding: URLEncoding.queryString)
+        case .review(_, let parameters):
+            return .requestParameters(parameters: stitchApiKey(from: parameters), encoding: URLEncoding.queryString)
         }
         
     }

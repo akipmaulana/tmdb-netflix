@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ReviewContentVC: BaseViewController, ViewModelProtocol {
 
@@ -18,6 +20,8 @@ class ReviewContentVC: BaseViewController, ViewModelProtocol {
     @IBOutlet weak private var voteTitleLabel: UILabel!
     @IBOutlet weak private var voteValueLabel: UILabel!
     
+    private let disposeBag = DisposeBag()
+    
     var viewModel: ReviewContentDefaultViewModel?
     
     override func viewDidLoad() {
@@ -26,6 +30,7 @@ class ReviewContentVC: BaseViewController, ViewModelProtocol {
         setupReviewRating()
         setupTitleVC()
         setupTableView()
+        viewModel?.loadReviews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +40,10 @@ class ReviewContentVC: BaseViewController, ViewModelProtocol {
 
     func bindView(vm: ReviewContentDefaultViewModel?) {
         viewModel = vm
+        
+        viewModel?.reviews.drive(onNext: {[unowned self] (_) in
+            self.tableView?.reloadData()
+        }).disposed(by: disposeBag)
     }
 
     func renderView() {
@@ -46,12 +55,12 @@ class ReviewContentVC: BaseViewController, ViewModelProtocol {
 extension ReviewContentVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.numberOfReview ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ReviewBoxTableCell
-        cell.bindView(vm: ReviewBoxDefaultViewModel(review: nil))
+        cell.bindView(vm: ReviewBoxDefaultViewModel(review: viewModel?.getSafeReview(at: indexPath.row)))
         return cell
     }
 }

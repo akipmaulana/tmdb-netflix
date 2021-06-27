@@ -16,6 +16,7 @@ enum MovieService: ApiService {
     case popular
     case topRated
     case upcoming
+    case review(id: Int, parameters: Parameters)
     
     func createEndpoint(_ endpoint: String) -> String {
         return "/movie\(endpoint)"
@@ -40,6 +41,8 @@ extension MovieService: TargetType {
             return createEndpoint("/top_rated")
         case .upcoming:
             return createEndpoint("/upcoming")
+        case .review(let id, _):
+            return createEndpoint("/\(id)/reviews")
         }
     }
     
@@ -55,6 +58,8 @@ extension MovieService: TargetType {
         switch self {
         case .latest, .upcoming, .nowPlaying, .popular, .topRated:
             return .requestParameters(parameters: stitchApiKey(from: [:]), encoding: URLEncoding.queryString)
+        case .review(_, let parameters):
+            return .requestParameters(parameters: stitchApiKey(from: parameters), encoding: URLEncoding.queryString)
         }
         
     }
