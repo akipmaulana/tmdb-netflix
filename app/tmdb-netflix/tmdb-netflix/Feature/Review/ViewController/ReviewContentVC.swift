@@ -50,7 +50,9 @@ extension ReviewContentVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ReviewBoxTableCell
+        cell.bindView(vm: ReviewBoxDefaultViewModel(review: nil))
+        return cell
     }
 }
 
@@ -92,8 +94,7 @@ private extension ReviewContentVC {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        tableView?.isScrollEnabled = false
-        tableView?.register(DThematicTableCell.self)
+        tableView?.register(ReviewBoxTableCell.self)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 8))
         tableView.tableHeaderView = UIView(frame: CGRect.zero)
     }

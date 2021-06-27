@@ -53,6 +53,10 @@
 		DAA307E426888F8E00C65FE9 /* ReviewContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307E226888F8E00C65FE9 /* ReviewContentVC.swift */; };
 		DAA307E526888F8E00C65FE9 /* ReviewContentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA307E326888F8E00C65FE9 /* ReviewContentVC.xib */; };
 		DAA307E826888F9F00C65FE9 /* ReviewContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */; };
+		DAA307EE2688C90600C65FE9 /* ReviewBoxTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307EC2688C90600C65FE9 /* ReviewBoxTableCell.swift */; };
+		DAA307EF2688C90600C65FE9 /* ReviewBoxTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA307ED2688C90600C65FE9 /* ReviewBoxTableCell.xib */; };
+		DAA307F12688C91600C65FE9 /* ReviewBoxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307F02688C91600C65FE9 /* ReviewBoxViewModel.swift */; };
+		DAA307F32688C99F00C65FE9 /* ReviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307F22688C99F00C65FE9 /* ReviewEntity.swift */; };
 		DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2122686E9CB00606CA1 /* AppDelegate.swift */; };
 		DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21B2686E9D000606CA1 /* Assets.xcassets */; };
 		DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */; };
@@ -131,6 +135,10 @@
 		DAA307E226888F8E00C65FE9 /* ReviewContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVC.swift; sourceTree = "<group>"; };
 		DAA307E326888F8E00C65FE9 /* ReviewContentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewContentVC.xib; sourceTree = "<group>"; };
 		DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentViewModel.swift; sourceTree = "<group>"; };
+		DAA307EC2688C90600C65FE9 /* ReviewBoxTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoxTableCell.swift; sourceTree = "<group>"; };
+		DAA307ED2688C90600C65FE9 /* ReviewBoxTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewBoxTableCell.xib; sourceTree = "<group>"; };
+		DAA307F02688C91600C65FE9 /* ReviewBoxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoxViewModel.swift; sourceTree = "<group>"; };
+		DAA307F22688C99F00C65FE9 /* ReviewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEntity.swift; sourceTree = "<group>"; };
 		DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-netflix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADBB2122686E9CB00606CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DADBB21B2686E9D000606CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -240,6 +248,7 @@
 				DA77CE522686FE790099DBC3 /* APIResponseEntity.swift */,
 				DA77CE542686FECC0099DBC3 /* MovieEntity.swift */,
 				DA77CE562686FFB20099DBC3 /* TVEntity.swift */,
+				DAA307F22688C99F00C65FE9 /* ReviewEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 		DAA307D726888F1100C65FE9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				DAA307EA2688C8E100C65FE9 /* View */,
 				DAA307D926888F2500C65FE9 /* ViewModel */,
 				DAA307D826888F1B00C65FE9 /* ViewController */,
 			);
@@ -404,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				DAA307DE26888F5500C65FE9 /* DetailContentViewModel.swift */,
+				DAA307F02688C91600C65FE9 /* ReviewBoxViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -432,6 +443,23 @@
 				DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAA307EA2688C8E100C65FE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307EB2688C8E600C65FE9 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAA307EB2688C8E600C65FE9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307EC2688C90600C65FE9 /* ReviewBoxTableCell.swift */,
+				DAA307ED2688C90600C65FE9 /* ReviewBoxTableCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		DADBB2062686E9CB00606CA1 = {
@@ -645,6 +673,7 @@
 				DA77CE4C2686FC170099DBC3 /* PortalVC.xib in Resources */,
 				DA8044512688523800AC8A3E /* DThematicTableCell.xib in Resources */,
 				DA8044412688400600AC8A3E /* SourceSansPro-Light.ttf in Resources */,
+				DAA307EF2688C90600C65FE9 /* ReviewBoxTableCell.xib in Resources */,
 				DAA307E526888F8E00C65FE9 /* ReviewContentVC.xib in Resources */,
 				DA8044402688400600AC8A3E /* SourceSansPro-Regular.ttf in Resources */,
 				DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */,
@@ -784,6 +813,7 @@
 				DAA307DF26888F5500C65FE9 /* DetailContentViewModel.swift in Sources */,
 				DA77CE552686FECC0099DBC3 /* MovieEntity.swift in Sources */,
 				DA804447268844AE00AC8A3E /* AppExtension.swift in Sources */,
+				DAA307EE2688C90600C65FE9 /* ReviewBoxTableCell.swift in Sources */,
 				DA9A702A268801F0007CA0A6 /* GenreService.swift in Sources */,
 				DA77CE5F268704900099DBC3 /* Typealiases.swift in Sources */,
 				DAA307D6268882AA00C65FE9 /* PosterViewModel.swift in Sources */,
@@ -800,6 +830,7 @@
 				DA8044452688429E00AC8A3E /* BaseViewController.swift in Sources */,
 				DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */,
 				DA77CE5B2687024C0099DBC3 /* Enums.swift in Sources */,
+				DAA307F12688C91600C65FE9 /* ReviewBoxViewModel.swift in Sources */,
 				DA77CE59268701D20099DBC3 /* APIManager.swift in Sources */,
 				DA8044642688782700AC8A3E /* ThematicModel.swift in Sources */,
 				DA77CE5D268702BA0099DBC3 /* Constants.swift in Sources */,
@@ -810,6 +841,7 @@
 				DA80446026886ACB00AC8A3E /* BaseViewModel.swift in Sources */,
 				DA80445B268869EB00AC8A3E /* DiscoveryViewModel.swift in Sources */,
 				DA9A7032268805D3007CA0A6 /* TabBarVC.swift in Sources */,
+				DAA307F32688C99F00C65FE9 /* ReviewEntity.swift in Sources */,
 				DA8044502688523800AC8A3E /* DThematicTableCell.swift in Sources */,
 				DA77CE622687070F0099DBC3 /* GeneralUtil.swift in Sources */,
 				DA9A704126880711007CA0A6 /* ColorExtension.swift in Sources */,
