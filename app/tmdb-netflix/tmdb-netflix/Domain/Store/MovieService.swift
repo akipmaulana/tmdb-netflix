@@ -53,8 +53,8 @@ extension MovieService: TargetType {
     
     var task: Task {
         switch self {
-        case .latest(let parameters), .upcoming(let parameters), .nowPlaying(let parameters), .popular(let parameters), .topRated(let parameters):
-            return .requestParameters(parameters: stitchApiKey(from: parameters), encoding: URLEncoding.queryString)
+        case .latest, .upcoming, .nowPlaying, .popular, .topRated:
+            return .requestParameters(parameters: stitchApiKey(from: [:]), encoding: URLEncoding.queryString)
         }
         
     }

@@ -44,8 +44,8 @@ extension GenreService: TargetType {
     
     var task: Task {
         switch self {
-        case .movie(let parameters), .tv(let parameters):
-            return .requestParameters(parameters: stitchApiKey(from: parameters), encoding: URLEncoding.queryString)
+        case .movie, .tv:
+            return .requestParameters(parameters: stitchApiKey(from: [:]), encoding: URLEncoding.queryString)
         }
     }
     

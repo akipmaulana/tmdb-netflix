@@ -24,6 +24,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SourceSansPro-Bold</string>
+		<string>SourceSansPro-SemiBold</string>
+		<string>SourceSansPro-Regular</string>
+		<string>SourceSansPro-Light</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

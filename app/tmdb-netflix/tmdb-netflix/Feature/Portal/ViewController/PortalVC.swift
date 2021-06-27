@@ -8,11 +8,15 @@
 
 import UIKit
 
-class PortalVC: UIViewController {
+class PortalVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestDiscoverMovie()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        openLandingPage()
     }
 
     func requestDiscoverMovie() {
@@ -25,5 +29,10 @@ class PortalVC: UIViewController {
     
     func requestDiscoverTv() {
         
+    }
+    
+    func openLandingPage() {
+        let tabBarVC: TabBarVC = TabBarVC()
+        presentLandingPage(vc: tabBarVC, completion: nil)
     }
 }
