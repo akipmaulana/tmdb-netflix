@@ -29,6 +29,7 @@ extension ApiService {
     func stitchApiKey(from parameters: Parameters) -> Parameters {
         var newParams: Parameters = parameters
         newParams["api_key"] = APIConstant.apikey
+        newParams["language"] = "en-US"
         return newParams
     }
 }
