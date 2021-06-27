@@ -34,7 +34,10 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     private let _isFetching = BehaviorRelay<Bool>(value: false)
     private let _isFetchingMore = BehaviorRelay<Bool>(value: false)
     private let _latestContent = BehaviorRelay<Content?>(value: nil)
+    private let _genre = BehaviorRelay<[Genre]>(value: [])
     private var bagOfThematic: [ThematicData] = []
+    private var bagOfGenre: [Genre] = []
+    private var bagOfLatestContent: Content?
     
     var isFetching: Driver<Bool> {
         return _isFetching.asDriver()
@@ -48,16 +51,22 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
         return _thematics.asDriver()
     }
     
+    var genres: Driver<[Genre]> {
+        return _genre.asDriver()
+    }
+    
     var latestContent: Driver<Content?> {
         return _latestContent.asDriver()
     }
     
     var latestPosterImageUrl: String? {
-        return String.init(format: "%@%@", APIConstant.baseImageUrl, _latestContent.value?.posterPath ?? "")
+        return String.init(format: "%@%@", APIConstant.baseImageUrl, bagOfLatestContent?.posterPath ?? "")
     }
     
     var latestGenreLabelText: String? {
-        return ["Comedy", "Romantic", "Family"].joined(separator: " • ")
+        let genreIds = bagOfLatestContent?.genreIds ?? []
+        let res = zip(bagOfGenre, genreIds).enumerated().filter{ $1.0.id == $1.1 }.map{ $1.0 }
+        return res.compactMap{ $0.name ?? "-" }.joined(separator: " • ")
     }
     
     var titleDomainLabelText: String {
@@ -102,12 +111,6 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     }
     
     func loadLatestContent() {
-//        switch kind {
-//        case .movie:
-//            requestMovieLatest()
-//        case .tv:
-//            requestTVLatest()
-//        }
     }
     
     func loadGenre() {
@@ -120,11 +123,10 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     }
     
     // MARK: - API Movie Request
-    private func requestMovieGenre() {}
-    
-    private func requestMovieLatest() {
-        ApiManager.shared.movieService.request(target: .latest, mapper: Movie.self) { [weak self] movie in
-            self?._latestContent.accept(movie)
+    private func requestMovieGenre() {
+        ApiManager.shared.genreService.request(target: .movie, mapper: GenreResponse.self) { [weak self] response in
+            self?.bagOfGenre = response.genres ?? []
+            self?._genre.accept(self?.bagOfGenre ?? [])
         } error: { error in
             print(error)
         }
@@ -134,6 +136,9 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
         ApiManager.shared.movieService.request(target: .nowPlaying, mapper: ResponsePageable<Movie>.self) { [weak self] pageable in
             let newData: ThematicData = ThematicData(thematic: MovieThematicKind.nowPlaying, content: pageable.results ?? [])
             self?.bagOfThematic.append(newData)
+            self?.bagOfLatestContent = pageable.results?.first
+            self?._latestContent.accept(self?.bagOfLatestContent)
+            self?._genre.accept(self?.bagOfGenre ?? [])
             self?._thematics.accept(self?.bagOfThematic ?? [])
         } error: { error in
             print(error)
@@ -171,11 +176,10 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     }
     
     // MARK: - API TV Request
-    private func requestTVGenre() {}
-    
-    private func requestTVLatest() {
-        ApiManager.shared.tvService.request(target: .latest, mapper: TVSeries.self) { [weak self] tvSeries in
-            self?._latestContent.accept(tvSeries)
+    private func requestTVGenre() {
+        ApiManager.shared.genreService.request(target: .tv, mapper: GenreResponse.self) { [weak self] response in
+            self?.bagOfGenre = response.genres ?? []
+            self?._genre.accept(self?.bagOfGenre ?? [])
         } error: { error in
             print(error)
         }
@@ -195,6 +199,9 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
         ApiManager.shared.tvService.request(target: .onTheAir, mapper: ResponsePageable<TVSeries>.self) { [weak self] pageable in
             let newData: ThematicData = ThematicData(thematic: TVThematicKind.onTheAir, content: pageable.results ?? [])
             self?.bagOfThematic.append(newData)
+            self?.bagOfLatestContent = pageable.results?.first
+            self?._latestContent.accept(self?.bagOfLatestContent)
+            self?._genre.accept(self?.bagOfGenre ?? [])
             self?._thematics.accept(self?.bagOfThematic ?? [])
         } error: { error in
             print(error)

@@ -60,6 +60,10 @@ final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
             self.latestPosterImageView?.sd_setImage(with: URL(string: self.viewModel?.latestPosterImageUrl ?? ""))
             self.latestGenreLabel?.text = self.viewModel?.latestGenreLabelText
         }).disposed(by: disposeBag)
+        
+        viewModel?.genres.drive(onNext: {[unowned self] (_) in
+            self.latestGenreLabel?.text = self.viewModel?.latestGenreLabelText
+        }).disposed(by: disposeBag)
     }
 }
 
