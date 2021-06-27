@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MThematicTableCell: UITableViewCell, LoadableReusableView {
+class DThematicTableCell: UITableViewCell, LoadableReusableView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,7 +22,7 @@ class MThematicTableCell: UITableViewCell, LoadableReusableView {
     
 }
 
-extension MThematicTableCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DThematicTableCell: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 15
@@ -34,7 +34,7 @@ extension MThematicTableCell: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-private extension MThematicTableCell {
+private extension DThematicTableCell {
     func setupFoundationView() {
         backgroundColor = .clear
         contentView.backgroundColor = .clear

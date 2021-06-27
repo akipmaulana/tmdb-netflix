@@ -1,5 +1,5 @@
 //
-//  MovieHubVC.swift
+//  DiscoveryVC.swift
 //  tmdb-netflix
 //
 //  Created by Akirah Dev on 27/06/21.
@@ -8,8 +8,12 @@
 
 import UIKit
 
-class MovieHubVC: BaseViewController, TabBarScreen {
-
+final class DiscoveryVC: BaseViewController, TabBarScreen, VCViewModelProtocol {
+    
+    typealias ViewModel = DiscoveryDefaultViewModel
+    
+    internal var viewModel: DiscoveryDefaultViewModel?
+    
     @IBOutlet weak private var topNavBarView: UIView!
     @IBOutlet weak private var domainLabel: UILabel!
     @IBOutlet weak private var genreSelectedLabel: UILabel!
@@ -31,10 +35,13 @@ class MovieHubVC: BaseViewController, TabBarScreen {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
+    func bindView(vm: DiscoveryDefaultViewModel?) {
+        viewModel = vm
+    }
 }
 
-extension MovieHubVC: UITableViewDelegate, UITableViewDataSource {
+extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 10
@@ -45,12 +52,12 @@ extension MovieHubVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as MThematicTableCell
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as DThematicTableCell
         return cell
     }
 }
 
-private extension MovieHubVC {
+private extension DiscoveryVC {
     
     func setupCustomNavigationBarView() {
         topNavBarView?.backgroundColor = .clear
@@ -59,7 +66,7 @@ private extension MovieHubVC {
         domainLabel?.font = .sourceSansProBold(size: .title)
         domainLabel?.textColor = .white
         domainLabel?.numberOfLines = 0
-        domainLabel?.text = "Movie"
+        domainLabel?.text = viewModel?.titleDomainLabelText
         
         genreSelectedLabel?.font = .sourceSansProSemiBold(size: .subtitle2)
         genreSelectedLabel?.textColor = .white
@@ -86,7 +93,7 @@ private extension MovieHubVC {
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView?.isScrollEnabled = false
-        tableView?.register(MThematicTableCell.self)
+        tableView?.register(DThematicTableCell.self)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 8))
         tableView.tableHeaderView = UIView(frame: CGRect.zero)
     }

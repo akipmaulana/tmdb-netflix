@@ -13,12 +13,14 @@ protocol TabBarScreen {
 }
 
 final class TabBarVC: UITabBarController {
-    var movieHubVC: MovieHubVC = {
-        let vc = MovieHubVC()
+    var movieHubVC: DiscoveryVC = {
+        let vc = DiscoveryVC()
+        vc.bindView(vm: DiscoveryDefaultViewModel(kind: .movie))
         return vc
     }()
-    var tvHubVC: TVHubVC = {
-        let vc = TVHubVC()
+    var tvHubVC: DiscoveryVC = {
+        let vc = DiscoveryVC()
+        vc.bindView(vm: DiscoveryDefaultViewModel(kind: .tv))
         return vc
     }()
     

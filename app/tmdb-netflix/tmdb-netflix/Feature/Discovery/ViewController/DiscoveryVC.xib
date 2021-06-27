@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieHubVC" customModule="tmdb_netflix" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoveryVC" customModule="tmdb_netflix" customModuleProvider="target">
             <connections>
                 <outlet property="decorationView" destination="LXA-0X-onk" id="wui-vF-jtT"/>
                 <outlet property="domainLabel" destination="FjT-5X-sg8" id="6Hq-dC-1GJ"/>
