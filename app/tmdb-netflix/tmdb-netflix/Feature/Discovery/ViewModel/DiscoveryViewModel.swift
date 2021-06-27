@@ -69,13 +69,22 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     }
     
     func loadDiscoveryData() {
-        requestNowPlaying()
-        requestPopular()
-        requestTopRated()
-        requestUpcoming()
+        bagOfThematic.removeAll()
+        switch kind {
+        case .movie:
+            requestNowPlaying()
+            requestPopular()
+            requestTopRated()
+            requestUpcoming()
+        case .tv:
+            requestOnTheAir()
+            requestTVPopular()
+            requestTVTopRated()
+            requestAiringToday()
+        }
     }
     
-    // MARk: - Movie Thematics Request
+    // MARK: - Movie Thematics Request
     private func requestNowPlaying() {
         ApiManager.shared.movieService.request(target: .nowPlaying, mapper: ResponsePageable<Movie>.self) { [weak self] pageable in
             let newData: ThematicData = ThematicData(thematic: MovieThematicKind.nowPlaying, content: pageable.results ?? [])
@@ -109,6 +118,47 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     private func requestUpcoming() {
         ApiManager.shared.movieService.request(target: .upcoming, mapper: ResponsePageable<Movie>.self) { [weak self] pageable in
             let newData: ThematicData = ThematicData(thematic: MovieThematicKind.upcoming, content: pageable.results ?? [])
+            self?.bagOfThematic.append(newData)
+            self?._thematics.accept(self?.bagOfThematic ?? [])
+        } error: { error in
+            print(error)
+        }
+    }
+    
+    // MARK: - TV Thematics Request
+    private func requestAiringToday() {
+        ApiManager.shared.tvService.request(target: .airingToday, mapper: ResponsePageable<TVSeries>.self) { [weak self] pageable in
+            let newData: ThematicData = ThematicData(thematic: TVThematicKind.airingToday, content: pageable.results ?? [])
+            self?.bagOfThematic.append(newData)
+            self?._thematics.accept(self?.bagOfThematic ?? [])
+        } error: { error in
+            print(error)
+        }
+    }
+    
+    private func requestOnTheAir() {
+        ApiManager.shared.tvService.request(target: .onTheAir, mapper: ResponsePageable<TVSeries>.self) { [weak self] pageable in
+            let newData: ThematicData = ThematicData(thematic: TVThematicKind.onTheAir, content: pageable.results ?? [])
+            self?.bagOfThematic.append(newData)
+            self?._thematics.accept(self?.bagOfThematic ?? [])
+        } error: { error in
+            print(error)
+        }
+    }
+    
+    private func requestTVTopRated() {
+        ApiManager.shared.tvService.request(target: .topRated, mapper: ResponsePageable<TVSeries>.self) { [weak self] pageable in
+            let newData: ThematicData = ThematicData(thematic: TVThematicKind.topRated, content: pageable.results ?? [])
+            self?.bagOfThematic.append(newData)
+            self?._thematics.accept(self?.bagOfThematic ?? [])
+        } error: { error in
+            print(error)
+        }
+    }
+    
+    private func requestTVPopular() {
+        ApiManager.shared.tvService.request(target: .popular, mapper: ResponsePageable<TVSeries>.self) { [weak self] pageable in
+            let newData: ThematicData = ThematicData(thematic: TVThematicKind.popular, content: pageable.results ?? [])
             self?.bagOfThematic.append(newData)
             self?._thematics.accept(self?.bagOfThematic ?? [])
         } error: { error in
