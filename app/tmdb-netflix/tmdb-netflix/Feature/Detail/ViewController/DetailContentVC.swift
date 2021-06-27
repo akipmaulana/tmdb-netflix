@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class DetailContentVC: BaseViewController, ViewModelProtocol {
     var viewModel: DetailContentDefaultViewModel?
 
     typealias ViewModel = DetailContentDefaultViewModel
     
+    private let disposeBag = DisposeBag()
+    
+    @IBOutlet weak private var decorationView: UIView!
+    @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var foundationPlayerView: UIView!
+    @IBOutlet weak private var posterImageView: UIImageView!
     @IBOutlet weak private var coverTrailerView: UIView!
     @IBOutlet weak private var trailerLabel: UILabel!
     @IBOutlet weak private var domainLabel: UILabel!
@@ -29,34 +36,69 @@ class DetailContentVC: BaseViewController, ViewModelProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        setupScrollView()
         addBackNavBarButton()
-        setupTitleVC()
+        //setupTitleVC()
         setupHeaderView()
         setupBasicInformationView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        renderData()
     }
 
     func bindView(vm: DetailContentDefaultViewModel?) {
         viewModel = vm
     }
 
+    func renderData() {
+        posterImageView?.sd_setImage(with: URL(string: viewModel?.posterImageUrl ?? ""))
+        domainLabel?.text = viewModel?.domainLabelText
+        contentTitleLabel?.text = viewModel?.contentTitleLabelText
+        contentStatusLabel?.text = viewModel?.contentStatusLabelText
+        contentReleasedLabel?.text = viewModel?.contentReleasedLabelText
+        contentDurationLabel?.text = viewModel?.contentAdultLabelText
+        contentOverviewLabel?.text = viewModel?.contentOverviewLabelText
+    }
 }
 
 private extension DetailContentVC {
     // MARK: - Setup View
     func setupTitleVC() {
-        title = "Life of PI"
+        title = viewModel?.contentTitleLabelText ?? ""
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.sourceSansProSemiBold(size: .title),
             NSAttributedString.Key.foregroundColor: UIColor.white,
         ]
     }
     
+    func setupScrollView() {
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
+        scrollView.contentOffset = .zero
+        scrollView.showsVerticalScrollIndicator = false
+    }
+    
     func setupHeaderView() {
+        coverTrailerView?.isHidden = true
         coverTrailerView?.layer.cornerRadius = 6.0
         coverTrailerView?.backgroundColor = .charcoalGrey
         trailerLabel?.font = .sourceSansProSemiBold(size: .subtitle2)
         trailerLabel?.textColor = .white
         trailerLabel?.text = "Trailer"
+        
+        decorationView?.backgroundColor = .clear
+        decorationView?.applyGradient(withColours: [.clear, UIColor.black.withAlphaComponent(0.8), .black], gradientOrientation: .vertical)
     }
     
     func setupBasicInformationView() {

@@ -25,4 +25,12 @@ protocol Content: Codable {
     var voteAverage: Double? { set get }
     var voteCount: Int? { set get }
     var posterPath: String? { set get }
+    var releaseDate: String? { get set }
+    var isAdult: Bool { get }
+}
+
+extension Content {
+    var released: Bool {
+        return !(releaseDate?.isEmpty ?? true)
+    }
 }

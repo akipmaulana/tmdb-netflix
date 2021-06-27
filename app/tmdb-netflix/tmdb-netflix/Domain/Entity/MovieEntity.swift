@@ -21,7 +21,11 @@ struct Movie: Content {
     let originalTitle: String?
     let popularity: Double?
     var posterPath: String?
-    let releaseDate: String?
+    var releaseDate: String?
     let video: Bool?
     let status: String?
+    
+    var isAdult: Bool {
+        return adult ?? false
+    }
 }

@@ -84,7 +84,7 @@ extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
 extension DiscoveryVC: DThematicTableCellDelegate {
     func dthematicTableCell(_ cell: DThematicTableCell, didTap poster: Content?) {
         let detailContentVC = DetailContentVC()
-        detailContentVC.bindView(vm: DetailContentDefaultViewModel())
+        detailContentVC.bindView(vm: DetailContentDefaultViewModel(content: poster))
         navigationController?.pushViewController(detailContentVC, animated: true)
     }
 }

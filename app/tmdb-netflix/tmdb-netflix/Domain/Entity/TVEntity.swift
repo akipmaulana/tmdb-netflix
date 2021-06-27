@@ -23,4 +23,16 @@ struct TVSeries: Content {
     let originalName: String?
     let popularity: Double?
     var posterPath: String?
+    var releaseDate: String? {
+        get {
+            return firstAirDate
+        }
+        set {
+            self.releaseDate = newValue
+        }
+    }
+    
+    var isAdult: Bool {
+        return false
+    }
 }
