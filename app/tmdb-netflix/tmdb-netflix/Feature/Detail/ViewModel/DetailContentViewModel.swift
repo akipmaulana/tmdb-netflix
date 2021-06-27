@@ -25,7 +25,7 @@ protocol DetailContentViewModel: TMDBViewModel {
 
 final class DetailContentDefaultViewModel: DetailContentViewModel {
     
-    private let content: Content?
+    let content: Content?
     
     var posterImageUrl: String? {
         return String.init(format: "%@%@", APIConstant.baseImageUrl, content?.posterPath ?? "")

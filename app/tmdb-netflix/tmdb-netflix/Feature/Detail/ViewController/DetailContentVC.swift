@@ -40,10 +40,6 @@ class DetailContentVC: BaseViewController, ViewModelProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
         setupScrollView()
         addBackNavBarButton()
         //setupTitleVC()
@@ -77,13 +73,6 @@ class DetailContentVC: BaseViewController, ViewModelProtocol {
 
 private extension DetailContentVC {
     // MARK: - Setup View
-    func setupTitleVC() {
-        title = viewModel?.contentTitleLabelText ?? ""
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.sourceSansProSemiBold(size: .title),
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-        ]
-    }
     
     func setupScrollView() {
         if #available(iOS 11.0, *) {
@@ -181,6 +170,7 @@ private extension DetailContentVC {
     
     @objc func didTapSeeMore(_ button: UIButton) {
         let reviewVC = ReviewContentVC()
+        reviewVC.bindView(vm: ReviewContentDefaultViewModel(content: viewModel?.content))
         navigationController?.pushViewController(reviewVC, animated: true)
     }
 }

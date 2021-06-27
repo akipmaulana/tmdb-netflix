@@ -25,6 +25,7 @@ class DThematicTableCell: UITableViewCell, LoadableReusableView, ViewModelProtoc
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         setupFoundationView()
         setupLabels()
         setupCollectionView()
