@@ -47,6 +47,12 @@
 		DA9A703826880663007CA0A6 /* DiscoveryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA9A703626880663007CA0A6 /* DiscoveryVC.xib */; };
 		DA9A704126880711007CA0A6 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A704026880711007CA0A6 /* ColorExtension.swift */; };
 		DAA307D6268882AA00C65FE9 /* PosterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307D5268882AA00C65FE9 /* PosterViewModel.swift */; };
+		DAA307DC26888F4700C65FE9 /* DetailContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307DA26888F4700C65FE9 /* DetailContentVC.swift */; };
+		DAA307DD26888F4800C65FE9 /* DetailContentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA307DB26888F4700C65FE9 /* DetailContentVC.xib */; };
+		DAA307DF26888F5500C65FE9 /* DetailContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307DE26888F5500C65FE9 /* DetailContentViewModel.swift */; };
+		DAA307E426888F8E00C65FE9 /* ReviewContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307E226888F8E00C65FE9 /* ReviewContentVC.swift */; };
+		DAA307E526888F8E00C65FE9 /* ReviewContentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA307E326888F8E00C65FE9 /* ReviewContentVC.xib */; };
+		DAA307E826888F9F00C65FE9 /* ReviewContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */; };
 		DADBB2132686E9CB00606CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBB2122686E9CB00606CA1 /* AppDelegate.swift */; };
 		DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21B2686E9D000606CA1 /* Assets.xcassets */; };
 		DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DADBB21D2686E9D000606CA1 /* LaunchScreen.storyboard */; };
@@ -119,6 +125,12 @@
 		DA9A703626880663007CA0A6 /* DiscoveryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryVC.xib; sourceTree = "<group>"; };
 		DA9A704026880711007CA0A6 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		DAA307D5268882AA00C65FE9 /* PosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewModel.swift; sourceTree = "<group>"; };
+		DAA307DA26888F4700C65FE9 /* DetailContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentVC.swift; sourceTree = "<group>"; };
+		DAA307DB26888F4700C65FE9 /* DetailContentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailContentVC.xib; sourceTree = "<group>"; };
+		DAA307DE26888F5500C65FE9 /* DetailContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewModel.swift; sourceTree = "<group>"; };
+		DAA307E226888F8E00C65FE9 /* ReviewContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentVC.swift; sourceTree = "<group>"; };
+		DAA307E326888F8E00C65FE9 /* ReviewContentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewContentVC.xib; sourceTree = "<group>"; };
+		DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewContentViewModel.swift; sourceTree = "<group>"; };
 		DADBB20F2686E9CB00606CA1 /* tmdb-netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-netflix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADBB2122686E9CB00606CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DADBB21B2686E9D000606CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -370,6 +382,58 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DAA307D726888F1100C65FE9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307D926888F2500C65FE9 /* ViewModel */,
+				DAA307D826888F1B00C65FE9 /* ViewController */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		DAA307D826888F1B00C65FE9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307DA26888F4700C65FE9 /* DetailContentVC.swift */,
+				DAA307DB26888F4700C65FE9 /* DetailContentVC.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAA307D926888F2500C65FE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307DE26888F5500C65FE9 /* DetailContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAA307E026888F6600C65FE9 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307E626888F9300C65FE9 /* ViewModel */,
+				DAA307E126888F6C00C65FE9 /* ViewController */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		DAA307E126888F6C00C65FE9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307E226888F8E00C65FE9 /* ReviewContentVC.swift */,
+				DAA307E326888F8E00C65FE9 /* ReviewContentVC.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAA307E626888F9300C65FE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAA307E726888F9F00C65FE9 /* ReviewContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DADBB2062686E9CB00606CA1 = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +497,8 @@
 		DADBB2432686F56400606CA1 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				DAA307E026888F6600C65FE9 /* Review */,
+				DAA307D726888F1100C65FE9 /* Detail */,
 				DA80445C26886AA400AC8A3E /* Base */,
 				DA9A70332688063A007CA0A6 /* Discovery */,
 				DA9A702F268805A6007CA0A6 /* TabBar */,
@@ -573,11 +639,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA307DD26888F4800C65FE9 /* DetailContentVC.xib in Resources */,
 				DA8044552688587000AC8A3E /* PosterCollectionCell.xib in Resources */,
 				DADBB21F2686E9D000606CA1 /* LaunchScreen.storyboard in Resources */,
 				DA77CE4C2686FC170099DBC3 /* PortalVC.xib in Resources */,
 				DA8044512688523800AC8A3E /* DThematicTableCell.xib in Resources */,
 				DA8044412688400600AC8A3E /* SourceSansPro-Light.ttf in Resources */,
+				DAA307E526888F8E00C65FE9 /* ReviewContentVC.xib in Resources */,
 				DA8044402688400600AC8A3E /* SourceSansPro-Regular.ttf in Resources */,
 				DADBB21C2686E9D000606CA1 /* Assets.xcassets in Resources */,
 				DA9A703826880663007CA0A6 /* DiscoveryVC.xib in Resources */,
@@ -710,8 +778,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA307E426888F8E00C65FE9 /* ReviewContentVC.swift in Sources */,
 				DA77CE532686FE790099DBC3 /* APIResponseEntity.swift in Sources */,
 				DA8044622688714000AC8A3E /* DThematicViewModel.swift in Sources */,
+				DAA307DF26888F5500C65FE9 /* DetailContentViewModel.swift in Sources */,
 				DA77CE552686FECC0099DBC3 /* MovieEntity.swift in Sources */,
 				DA804447268844AE00AC8A3E /* AppExtension.swift in Sources */,
 				DA9A702A268801F0007CA0A6 /* GenreService.swift in Sources */,
@@ -733,7 +803,9 @@
 				DA77CE59268701D20099DBC3 /* APIManager.swift in Sources */,
 				DA8044642688782700AC8A3E /* ThematicModel.swift in Sources */,
 				DA77CE5D268702BA0099DBC3 /* Constants.swift in Sources */,
+				DAA307DC26888F4700C65FE9 /* DetailContentVC.swift in Sources */,
 				DA9A703726880663007CA0A6 /* DiscoveryVC.swift in Sources */,
+				DAA307E826888F9F00C65FE9 /* ReviewContentViewModel.swift in Sources */,
 				DA80444A2688514100AC8A3E /* ScrollExtension.swift in Sources */,
 				DA80446026886ACB00AC8A3E /* BaseViewModel.swift in Sources */,
 				DA80445B268869EB00AC8A3E /* DiscoveryViewModel.swift in Sources */,

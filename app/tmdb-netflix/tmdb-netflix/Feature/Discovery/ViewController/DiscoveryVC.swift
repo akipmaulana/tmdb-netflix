@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SDWebImage
 
 final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
     
@@ -33,12 +34,19 @@ final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
         setupTableView()
         setupDecorationView()
         setupCustomNavigationBarView()
+        viewModel?.loadGenre()
+        viewModel?.loadDiscoveryData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        viewModel?.loadDiscoveryData()
+        viewModel?.loadLatestContent()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func bindView(vm: DiscoveryDefaultViewModel?) {
@@ -46,6 +54,11 @@ final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
         
         viewModel?.thematics.drive(onNext: {[unowned self] (_) in
             self.tableView?.reloadData()
+        }).disposed(by: disposeBag)
+        
+        viewModel?.latestContent.drive(onNext: {[unowned self] _ in
+            self.latestPosterImageView?.sd_setImage(with: URL(string: self.viewModel?.latestPosterImageUrl ?? ""))
+            self.latestGenreLabel?.text = self.viewModel?.latestGenreLabelText
         }).disposed(by: disposeBag)
     }
 }
@@ -63,12 +76,21 @@ extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as DThematicTableCell
         cell.bindView(vm: DThematiceDefaultViewModel(data: viewModel?.getSafeThematic(at: indexPath.section)))
+        cell.delegate = self
         return cell
     }
 }
 
+extension DiscoveryVC: DThematicTableCellDelegate {
+    func dthematicTableCell(_ cell: DThematicTableCell, didTap poster: Content?) {
+        let detailContentVC = DetailContentVC()
+        detailContentVC.bindView(vm: DetailContentDefaultViewModel())
+        navigationController?.pushViewController(detailContentVC, animated: true)
+    }
+}
+
 private extension DiscoveryVC {
-    
+    // MARK: - Setup View
     func setupCustomNavigationBarView() {
         topNavBarView?.backgroundColor = .clear
         topNavBarView?.applyGradient(withColours: [.black, UIColor.black.withAlphaComponent(0.8), .clear], gradientOrientation: .vertical)
@@ -115,6 +137,6 @@ private extension DiscoveryVC {
         latestGenreLabel?.font = .sourceSansProSemiBold(size: .caption)
         latestGenreLabel?.textColor = .white
         latestGenreLabel?.numberOfLines = 0
-        latestGenreLabel?.text = "Comedy • Romantic • Family"
+        latestGenreLabel?.text = ""
     }
 }

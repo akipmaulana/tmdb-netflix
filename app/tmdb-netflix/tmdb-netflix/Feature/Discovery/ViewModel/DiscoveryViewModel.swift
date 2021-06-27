@@ -18,6 +18,10 @@ protocol DiscoveryViewModel: TMDBViewModel {
     func getSafeThematic(at position: Int) -> ThematicData?
     
     func loadDiscoveryData()
+    
+    func loadLatestContent()
+    
+    func loadGenre()
 }
 
 final class DiscoveryDefaultViewModel: DiscoveryViewModel {
@@ -29,6 +33,7 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     private let _thematics = BehaviorRelay<[ThematicData]>(value: [])
     private let _isFetching = BehaviorRelay<Bool>(value: false)
     private let _isFetchingMore = BehaviorRelay<Bool>(value: false)
+    private let _latestContent = BehaviorRelay<Content?>(value: nil)
     private var bagOfThematic: [ThematicData] = []
     
     var isFetching: Driver<Bool> {
@@ -41,6 +46,18 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
     
     var thematics: Driver<[ThematicData]> {
         return _thematics.asDriver()
+    }
+    
+    var latestContent: Driver<Content?> {
+        return _latestContent.asDriver()
+    }
+    
+    var latestPosterImageUrl: String? {
+        return String.init(format: "%@%@", APIConstant.baseImageUrl, _latestContent.value?.posterPath ?? "")
+    }
+    
+    var latestGenreLabelText: String? {
+        return ["Comedy", "Romantic", "Family"].joined(separator: " • ")
     }
     
     var titleDomainLabelText: String {
@@ -84,7 +101,35 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
         }
     }
     
-    // MARK: - Movie Thematics Request
+    func loadLatestContent() {
+//        switch kind {
+//        case .movie:
+//            requestMovieLatest()
+//        case .tv:
+//            requestTVLatest()
+//        }
+    }
+    
+    func loadGenre() {
+        switch kind {
+        case .movie:
+            requestMovieGenre()
+        case .tv:
+            requestTVGenre()
+        }
+    }
+    
+    // MARK: - API Movie Request
+    private func requestMovieGenre() {}
+    
+    private func requestMovieLatest() {
+        ApiManager.shared.movieService.request(target: .latest, mapper: Movie.self) { [weak self] movie in
+            self?._latestContent.accept(movie)
+        } error: { error in
+            print(error)
+        }
+    }
+    
     private func requestNowPlaying() {
         ApiManager.shared.movieService.request(target: .nowPlaying, mapper: ResponsePageable<Movie>.self) { [weak self] pageable in
             let newData: ThematicData = ThematicData(thematic: MovieThematicKind.nowPlaying, content: pageable.results ?? [])
@@ -125,7 +170,17 @@ final class DiscoveryDefaultViewModel: DiscoveryViewModel {
         }
     }
     
-    // MARK: - TV Thematics Request
+    // MARK: - API TV Request
+    private func requestTVGenre() {}
+    
+    private func requestTVLatest() {
+        ApiManager.shared.tvService.request(target: .latest, mapper: TVSeries.self) { [weak self] tvSeries in
+            self?._latestContent.accept(tvSeries)
+        } error: { error in
+            print(error)
+        }
+    }
+    
     private func requestAiringToday() {
         ApiManager.shared.tvService.request(target: .airingToday, mapper: ResponsePageable<TVSeries>.self) { [weak self] pageable in
             let newData: ThematicData = ThematicData(thematic: TVThematicKind.airingToday, content: pageable.results ?? [])

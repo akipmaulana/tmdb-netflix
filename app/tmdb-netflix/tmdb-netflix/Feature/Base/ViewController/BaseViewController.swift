@@ -13,8 +13,17 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        navigationController?.navigationBar.barTintColor = .black
     }
     
+    // MARK: - Setup Base View Func
+    func addBackNavBarButton() {
+        let back = UIBarButtonItem(image: UIImage(named: "icon-back")?.withRenderingMode(.alwaysTemplate), style: .done, target: self, action: #selector(arrowLeftButtonTapped))
+        navigationItem.leftBarButtonItems = [back]
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
+    // MARK: - Action Funcs
     @objc func presentLandingPage(vc: UIViewController, completion: (() -> Void)? = nil) {
         vc.modalPresentationStyle = .fullScreen
         guard let topViewController = UIApplication.topViewController() else {
@@ -22,5 +31,9 @@ class BaseViewController: UIViewController {
             return
         }
         topViewController.present(vc, animated: true, completion: completion)
+    }
+    
+    @objc private func arrowLeftButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

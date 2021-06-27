@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DThematicTableCellDelegate: AnyObject {
+    func dthematicTableCell(_ cell: DThematicTableCell, didTap poster: Content?)
+}
+
 class DThematicTableCell: UITableViewCell, LoadableReusableView, ViewModelProtocol {
     
     typealias ViewModel = DThematiceDefaultViewModel
@@ -16,6 +20,8 @@ class DThematicTableCell: UITableViewCell, LoadableReusableView, ViewModelProtoc
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    weak var delegate: DThematicTableCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +50,10 @@ extension DThematicTableCell: UICollectionViewDelegate, UICollectionViewDataSour
         cell.bindView(vm: PosterDefaultViewModel(content: viewModel?.getSafeContent(at: indexPath.item)))
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.dthematicTableCell(self, didTap: viewModel?.getSafeContent(at: indexPath.item))
+    }
 }
 
 private extension DThematicTableCell {
@@ -56,7 +66,7 @@ private extension DThematicTableCell {
         titleLabel?.font = .sourceSansProBold(size: .subtitle1)
         titleLabel?.textColor = .whiteSmoke
         titleLabel?.numberOfLines = 0
-        titleLabel?.text = "Trending Now"
+        titleLabel?.text = ""
     }
     
     private func setupCollectionView() {

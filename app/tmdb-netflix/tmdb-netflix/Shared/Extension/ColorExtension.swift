@@ -47,4 +47,14 @@ extension UIColor {
     @nonobjc class var darkRed: UIColor {
         return UIColor(hexString: "#831010")
     }
+    
+    @nonobjc class var charcoalGrey: UIColor {
+        return UIColor(hexString: "#434955")
+    }
+    
+    @nonobjc class var googleGreen: UIColor {
+        return UIColor(hexString: "#0F9D58")
+    }
+    
+    
 }
