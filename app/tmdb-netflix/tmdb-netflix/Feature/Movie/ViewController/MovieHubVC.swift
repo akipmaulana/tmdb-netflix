@@ -11,11 +11,13 @@ import UIKit
 class MovieHubVC: BaseViewController, TabBarScreen {
 
     @IBOutlet weak private var topNavBarView: UIView!
+    @IBOutlet weak private var domainLabel: UILabel!
+    @IBOutlet weak private var genreSelectedLabel: UILabel!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var latestPosterImageView: UIImageView!
     @IBOutlet weak private var decorationView: UIView!
-    @IBOutlet weak private var genreLabel: UILabel!
+    @IBOutlet weak private var latestGenreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,16 @@ private extension MovieHubVC {
     func setupCustomNavigationBarView() {
         topNavBarView?.backgroundColor = .clear
         topNavBarView?.applyGradient(withColours: [.black, UIColor.black.withAlphaComponent(0.8), .clear], gradientOrientation: .vertical)
+        
+        domainLabel?.font = .sourceSansProBold(size: .title)
+        domainLabel?.textColor = .white
+        domainLabel?.numberOfLines = 0
+        domainLabel?.text = "Movie"
+        
+        genreSelectedLabel?.font = .sourceSansProSemiBold(size: .subtitle2)
+        genreSelectedLabel?.textColor = .white
+        genreSelectedLabel?.numberOfLines = 0
+        genreSelectedLabel?.text = "All Genres ▼"
     }
     
     func setupScrollView() {
@@ -83,9 +95,9 @@ private extension MovieHubVC {
         decorationView?.backgroundColor = .clear
         decorationView?.applyGradient(withColours: [.clear, UIColor.black.withAlphaComponent(0.8), .black], gradientOrientation: .vertical)
         
-        genreLabel?.font = .sourceSansProSemiBold(size: .caption)
-        genreLabel?.textColor = .white
-        genreLabel?.numberOfLines = 0
-        genreLabel?.text = "Comedy • Romantic • Family"
+        latestGenreLabel?.font = .sourceSansProSemiBold(size: .caption)
+        latestGenreLabel?.textColor = .white
+        latestGenreLabel?.numberOfLines = 0
+        latestGenreLabel?.text = "Comedy • Romantic • Family"
     }
 }
