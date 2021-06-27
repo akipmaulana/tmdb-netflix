@@ -22,5 +22,5 @@ struct TVSeries: Content {
     let originalLanguage: String?
     let originalName: String?
     let popularity: Double?
-    let posterPath: String?
+    var posterPath: String?
 }

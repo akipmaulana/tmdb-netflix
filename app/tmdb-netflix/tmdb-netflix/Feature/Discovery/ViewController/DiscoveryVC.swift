@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
     
     typealias ViewModel = DiscoveryDefaultViewModel
     
     internal var viewModel: DiscoveryDefaultViewModel?
+    
+    private let disposeBag = DisposeBag()
     
     @IBOutlet weak private var topNavBarView: UIView!
     @IBOutlet weak private var domainLabel: UILabel!
@@ -34,17 +38,22 @@ final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        viewModel?.loadDiscoveryData()
     }
     
     func bindView(vm: DiscoveryDefaultViewModel?) {
         viewModel = vm
+        
+        viewModel?.thematics.drive(onNext: {[unowned self] (_) in
+            self.tableView?.reloadData()
+        }).disposed(by: disposeBag)
     }
 }
 
 extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.thematics.count ?? 0
+        return viewModel?.numberOfThematics ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +62,7 @@ extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as DThematicTableCell
-        cell.bindView(vm: DThematiceDefaultViewModel(thematic: viewModel?.getSafeThematic(at: indexPath.section)))
+        cell.bindView(vm: DThematiceDefaultViewModel(data: viewModel?.getSafeThematic(at: indexPath.section)))
         return cell
     }
 }

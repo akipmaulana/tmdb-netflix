@@ -28,6 +28,7 @@ class DThematicTableCell: UITableViewCell, LoadableReusableView, ViewModelProtoc
         viewModel = vm
         
         titleLabel?.text = vm?.thematicTitleLabelText
+        collectionView?.reloadData()
     }
     
 }
@@ -35,11 +36,12 @@ class DThematicTableCell: UITableViewCell, LoadableReusableView, ViewModelProtoc
 extension DThematicTableCell: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return viewModel?.content.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PosterCollectionCell
+        cell.bindView(vm: PosterDefaultViewModel(content: viewModel?.getSafeContent(at: indexPath.item)))
         return cell
     }
 }

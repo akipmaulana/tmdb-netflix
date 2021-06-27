@@ -42,6 +42,9 @@ class ApiManager {
     static let shared = ApiManager()
     
     let discoverService = InnerApiManager<DiscoverService>()
+    let genreService = InnerApiManager<GenreService>()
+    let movieService = InnerApiManager<MovieService>()
+    let tvService = InnerApiManager<TVService>()
 }
 
 class InnerApiManager<T: TargetType> {
@@ -63,7 +66,7 @@ class InnerApiManager<T: TargetType> {
                     
                     let json = try? JSONSerialization.jsonObject(with: response.data, options: [])
                     
-                    if let _ = json as? [[String:Any]] {
+                    if let _ = json as? [String:Any] {
                         let successResponse = try self.jsonDecoder.decode(mapper, from: response.data)
                         success?(successResponse)
                     } else {

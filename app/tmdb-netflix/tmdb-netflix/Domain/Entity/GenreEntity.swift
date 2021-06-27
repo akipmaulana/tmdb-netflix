@@ -24,4 +24,5 @@ protocol Content: Codable {
     var genreIds: [Int]? { set get }
     var voteAverage: Double? { set get }
     var voteCount: Int? { set get }
+    var posterPath: String? { set get }
 }

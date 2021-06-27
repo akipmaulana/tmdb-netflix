@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import SDWebImage
 
-class PosterCollectionCell: UICollectionViewCell, LoadableReusableView  {
+class PosterCollectionCell: UICollectionViewCell, LoadableReusableView, ViewModelProtocol {
+    var viewModel: PosterDefaultViewModel?
+    
+    typealias ViewModel = PosterDefaultViewModel
     
     @IBOutlet weak private var posterImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupImageView()
+    }
+    
+    func bindView(vm: PosterDefaultViewModel?) {
+        viewModel = vm
+        posterImageView?.sd_setImage(with: URL(string: vm?.posterUrl ?? ""))
     }
 
     // MARK: - Private Setup

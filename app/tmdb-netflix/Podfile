@@ -7,6 +7,10 @@ target 'tmdb-netflix' do
 
   # Pods for tmdb-netflix
   pod 'Moya', '~> 13.0.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'SVProgressHUD'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'tmdb-netflixTests' do
     inherit! :search_paths

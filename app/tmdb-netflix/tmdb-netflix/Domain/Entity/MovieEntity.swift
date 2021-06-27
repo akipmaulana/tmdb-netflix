@@ -20,7 +20,7 @@ struct Movie: Content {
     let originalLanguage: String?
     let originalTitle: String?
     let popularity: Double?
-    let posterPath: String?
+    var posterPath: String?
     let releaseDate: String?
     let video: Bool?
     let status: String?
