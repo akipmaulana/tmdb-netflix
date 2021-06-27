@@ -8,7 +8,11 @@
 
 import UIKit
 
-class DThematicTableCell: UITableViewCell, LoadableReusableView {
+class DThematicTableCell: UITableViewCell, LoadableReusableView, ViewModelProtocol {
+    
+    typealias ViewModel = DThematiceDefaultViewModel
+    
+    internal var viewModel: DThematiceDefaultViewModel?
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,6 +22,12 @@ class DThematicTableCell: UITableViewCell, LoadableReusableView {
         setupFoundationView()
         setupLabels()
         setupCollectionView()
+    }
+    
+    func bindView(vm: DThematiceDefaultViewModel?) {
+        viewModel = vm
+        
+        titleLabel?.text = vm?.thematicTitleLabelText
     }
     
 }

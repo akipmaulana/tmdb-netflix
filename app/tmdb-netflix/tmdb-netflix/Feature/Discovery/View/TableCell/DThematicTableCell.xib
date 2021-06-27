@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-hZ-ZQt">
-                        <rect key="frame" x="8" y="12" width="304" height="20.5"/>
+                        <rect key="frame" x="8" y="16" width="304" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-Tv-ZPW">
-                        <rect key="frame" x="0.0" y="36.5" width="320" height="128"/>
+                        <rect key="frame" x="0.0" y="40.5" width="320" height="128"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="128" id="e5U-Hh-hVw"/>
@@ -43,7 +43,7 @@
                     <constraint firstAttribute="trailing" secondItem="Sdx-Tv-ZPW" secondAttribute="trailing" id="ewx-jO-ovz"/>
                     <constraint firstAttribute="bottom" secondItem="Sdx-Tv-ZPW" secondAttribute="bottom" priority="250" id="i04-ym-dFM"/>
                     <constraint firstAttribute="trailing" secondItem="dDr-hZ-ZQt" secondAttribute="trailing" constant="8" id="jbA-mO-PW4"/>
-                    <constraint firstItem="dDr-hZ-ZQt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="lWb-n1-vvK"/>
+                    <constraint firstItem="dDr-hZ-ZQt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="lWb-n1-vvK"/>
                     <constraint firstItem="Sdx-Tv-ZPW" firstAttribute="top" secondItem="dDr-hZ-ZQt" secondAttribute="bottom" constant="4" id="ywX-En-56F"/>
                 </constraints>
             </tableViewCellContentView>

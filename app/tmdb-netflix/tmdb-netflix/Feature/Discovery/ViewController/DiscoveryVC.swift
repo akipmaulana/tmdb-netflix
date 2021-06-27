@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DiscoveryVC: BaseViewController, TabBarScreen, VCViewModelProtocol {
+final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
     
     typealias ViewModel = DiscoveryDefaultViewModel
     
@@ -44,7 +44,7 @@ final class DiscoveryVC: BaseViewController, TabBarScreen, VCViewModelProtocol {
 extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return viewModel?.thematics.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,6 +53,7 @@ extension DiscoveryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as DThematicTableCell
+        cell.bindView(vm: DThematiceDefaultViewModel(thematic: viewModel?.getSafeThematic(at: indexPath.section)))
         return cell
     }
 }

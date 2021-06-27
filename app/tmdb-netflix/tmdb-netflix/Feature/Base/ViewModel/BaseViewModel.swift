@@ -11,7 +11,7 @@ import Foundation
 protocol TMDBViewModel {
 }
 
-protocol VCViewModelProtocol {
+protocol ViewModelProtocol {
     
     associatedtype ViewModel: TMDBViewModel
     

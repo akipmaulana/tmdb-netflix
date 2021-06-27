@@ -37,6 +37,7 @@
 		DA8044582688699600AC8A3E /* DiscoveryKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8044572688699600AC8A3E /* DiscoveryKind.swift */; };
 		DA80445B268869EB00AC8A3E /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80445A268869EB00AC8A3E /* DiscoveryViewModel.swift */; };
 		DA80446026886ACB00AC8A3E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80445F26886ACB00AC8A3E /* BaseViewModel.swift */; };
+		DA8044622688714000AC8A3E /* DThematicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8044612688714000AC8A3E /* DThematicViewModel.swift */; };
 		DA9A702A268801F0007CA0A6 /* GenreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A7029268801F0007CA0A6 /* GenreService.swift */; };
 		DA9A702C26880200007CA0A6 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A702B26880200007CA0A6 /* MovieService.swift */; };
 		DA9A702E2688020D007CA0A6 /* TVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A702D2688020D007CA0A6 /* TVService.swift */; };
@@ -106,6 +107,7 @@
 		DA8044572688699600AC8A3E /* DiscoveryKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryKind.swift; sourceTree = "<group>"; };
 		DA80445A268869EB00AC8A3E /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
 		DA80445F26886ACB00AC8A3E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		DA8044612688714000AC8A3E /* DThematicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DThematicViewModel.swift; sourceTree = "<group>"; };
 		DA9A7029268801F0007CA0A6 /* GenreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreService.swift; sourceTree = "<group>"; };
 		DA9A702B26880200007CA0A6 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		DA9A702D2688020D007CA0A6 /* TVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVService.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				DA80445A268869EB00AC8A3E /* DiscoveryViewModel.swift */,
+				DA8044612688714000AC8A3E /* DThematicViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA77CE532686FE790099DBC3 /* APIResponseEntity.swift in Sources */,
+				DA8044622688714000AC8A3E /* DThematicViewModel.swift in Sources */,
 				DA77CE552686FECC0099DBC3 /* MovieEntity.swift in Sources */,
 				DA804447268844AE00AC8A3E /* AppExtension.swift in Sources */,
 				DA9A702A268801F0007CA0A6 /* GenreService.swift in Sources */,
