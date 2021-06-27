@@ -6,8 +6,9 @@
 //  
 //
 
-import Foundation
+import UIKit
 
 typealias ApiSuccessClosure<BR: Codable> = (_ response: BR) -> Void
 typealias ErrorClosure = (Error) -> Void
 typealias LoadableReusableView = NibLoadableView & ReusableView
+typealias GradientPoints = (startPoint: CGPoint, endPoint: CGPoint)

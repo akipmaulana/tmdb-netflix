@@ -10,13 +10,19 @@ import UIKit
 
 class MovieHubVC: BaseViewController, TabBarScreen {
 
+    @IBOutlet weak private var topNavBarView: UIView!
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var latestPosterImageView: UIImageView!
+    @IBOutlet weak private var decorationView: UIView!
+    @IBOutlet weak private var genreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
         setupTableView()
+        setupDecorationView()
+        setupCustomNavigationBarView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +50,11 @@ extension MovieHubVC: UITableViewDelegate, UITableViewDataSource {
 
 private extension MovieHubVC {
     
+    func setupCustomNavigationBarView() {
+        topNavBarView?.backgroundColor = .clear
+        topNavBarView?.applyGradient(withColours: [.black, UIColor.black.withAlphaComponent(0.8), .clear], gradientOrientation: .vertical)
+    }
+    
     func setupScrollView() {
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = .never
@@ -66,5 +77,15 @@ private extension MovieHubVC {
         tableView?.register(MThematicTableCell.self)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 8))
         tableView.tableHeaderView = UIView(frame: CGRect.zero)
+    }
+    
+    func setupDecorationView() {
+        decorationView?.backgroundColor = .clear
+        decorationView?.applyGradient(withColours: [.clear, UIColor.black.withAlphaComponent(0.8), .black], gradientOrientation: .vertical)
+        
+        genreLabel?.font = .sourceSansProSemiBold(size: .caption)
+        genreLabel?.textColor = .white
+        genreLabel?.numberOfLines = 0
+        genreLabel?.text = "Comedy • Romantic • Family"
     }
 }

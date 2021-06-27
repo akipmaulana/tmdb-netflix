@@ -6,7 +6,7 @@
 //  
 //
 
-import Foundation
+import UIKit
 
 // MARK: - API Enum(s)
 enum ApiError: Error {
@@ -26,4 +26,30 @@ enum ApiError: Error {
 enum ApiVersion: String {
     case v3 = "3"
     case v4 = "4"
+}
+
+// MARK: - View Enum(s)
+enum GradientOrientation {
+    case horizontal
+    case vertical
+    case diagonal
+    
+    var startPoint: CGPoint {
+        return points.startPoint
+    }
+    
+    var endPoint: CGPoint {
+        return points.endPoint
+    }
+    
+    var points: GradientPoints {
+        switch self {
+        case .horizontal:
+            return (CGPoint.init(x: 0.0, y: 0.5), CGPoint.init(x: 1.0, y: 0.5))
+        case .vertical:
+            return (CGPoint.init(x: 0.0, y: 0.0), CGPoint.init(x: 0.0, y: 1.0))
+        case .diagonal:
+            return (CGPoint.init(x: 0.0, y: 0.0), CGPoint.init(x: 1.0, y: 1.0))
+        }
+    }
 }

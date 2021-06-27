@@ -24,3 +24,21 @@ extension UIApplication {
         return viewController
     }
 }
+
+extension UIView {
+    func applyGradient(withColours colours: [UIColor], gradientOrientation orientation: GradientOrientation, radius: CGFloat = 0) {
+        clearGradient()
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.name = Tag.gradientLayer
+        gradient.frame = self.bounds
+        gradient.cornerRadius = radius
+        gradient.colors = colours.map { $0.cgColor }
+        gradient.startPoint = orientation.startPoint
+        gradient.endPoint = orientation.endPoint
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+    
+    func clearGradient() {
+        self.layer.sublayers?.removeAll(where: { ($0.name ?? "") == Tag.gradientLayer })
+    }
+}
