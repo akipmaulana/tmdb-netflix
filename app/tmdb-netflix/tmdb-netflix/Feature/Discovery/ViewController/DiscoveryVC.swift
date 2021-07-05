@@ -52,17 +52,17 @@ final class DiscoveryVC: BaseViewController, TabBarScreen, ViewModelProtocol {
     func bindView(vm: DiscoveryDefaultViewModel?) {
         viewModel = vm
         
-        viewModel?.thematics.drive(onNext: {[unowned self] (_) in
-            self.tableView?.reloadData()
+        viewModel?.thematics.drive(onNext: {[weak self] (_) in
+            self?.tableView?.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel?.latestContent.drive(onNext: {[unowned self] _ in
-            self.latestPosterImageView?.sd_setImage(with: URL(string: self.viewModel?.latestPosterImageUrl ?? ""))
-            self.latestGenreLabel?.text = self.viewModel?.latestGenreLabelText
+        viewModel?.latestContent.drive(onNext: {[weak self] _ in
+            self?.latestPosterImageView?.sd_setImage(with: URL(string: self?.viewModel?.latestPosterImageUrl ?? ""))
+            self?.latestGenreLabel?.text = self?.viewModel?.latestGenreLabelText
         }).disposed(by: disposeBag)
         
-        viewModel?.genres.drive(onNext: {[unowned self] (_) in
-            self.latestGenreLabel?.text = self.viewModel?.latestGenreLabelText
+        viewModel?.genres.drive(onNext: {[weak self] (_) in
+            self?.latestGenreLabel?.text = self?.viewModel?.latestGenreLabelText
         }).disposed(by: disposeBag)
     }
 }

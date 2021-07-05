@@ -42,8 +42,8 @@ class ReviewContentVC: BaseViewController, ViewModelProtocol {
     func bindView(vm: ReviewContentDefaultViewModel?) {
         viewModel = vm
         
-        viewModel?.reviews.drive(onNext: {[unowned self] (_) in
-            self.tableView?.reloadData()
+        viewModel?.reviews.drive(onNext: {[weak self] (_) in
+            self?.tableView?.reloadData()
         }).disposed(by: disposeBag)
         
         viewModel?.isFetching.drive(onNext: { loading in
